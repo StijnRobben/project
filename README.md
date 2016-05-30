@@ -1,4 +1,5 @@
-# project
-programmeer project
-<h6>Deze text is klein<h6>
-<h3>Deze text is groter<h3>
+# **project**
+
+<h3>Proposal<h3>
+In deze [video](https://www.youtube.com/watch?v=Y9zThcMJzQU) stelt "the school of life" dat rijke landen bepaalde eigenschappen bezitten.
+
