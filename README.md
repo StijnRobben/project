@@ -12,7 +12,7 @@ Ook kan men aan de hand van een barchart de waarden van bepaalde eigenschappen t
 Zie hiervoor de doc map
 <br></br>
 ###### datasets
-De databronnen die voornamelijk gebruikt zullen worden is *[World DataBank]* (http://databank.worldbank.org/data/home.aspx). De data kan op deze manier als excel file gedownload worden om vervolgens via de converter omgezet te worden tot een JSON of CSV file.
+De databronnen die voornamelijk gebruikt zullen worden is [*World DataBank*] (http://databank.worldbank.org/data/home.aspx). De data kan op deze manier als excel file gedownload worden om vervolgens via de converter omgezet te worden tot een JSON of CSV file.
 <br></br>
 ###### aparte delen visualisatie
 Zoals eerder vermeld bestaat de visualisatie uit 3 delen: een scatterplot, een bargraph en een interactieve wereldkaart. Met behulp van het klikken op de wereldkaart wordt er specifieke data weergegeven in de 2 andere visualisaties. Hoe deze exact met elkaar interacteren is nog niet duidelijk.
