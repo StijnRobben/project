@@ -2,7 +2,7 @@
 
 ## *Proposal*
 In deze [video](https://www.youtube.com/watch?v=Y9zThcMJzQU) stelt "the school of life" dat rijke landen bepaalde eigenschappen bezitten.
-De vraag die de visualisatie probeert te beantwoorden is welk van deze eigenschappen het meeste bijdragen aan de rijkdom van een land en of deze eigenschappen uberhaupt wel correleren met landelijke rijkdom. 
+De vraag die de visualisatie probeert te beantwoorden is welke van deze eigenschappen het meeste bijdragen aan de rijkdom van een land en of deze eigenschappen uberhaupt wel correleren met landelijke rijkdom. Alle hieronder genoemde eigenschappen zijn voor mij een *"MVP"*, eventuele extra implementaties zijn nog niet van toepassing.
 <br></br>
 ###### vraagstelling en oplossing
 Voor het beantwoorden van deze vraag zal de correlatie tussen de het GDP van landen en de verschillende eigenschappen uiteen worden gezet in een scatterplot. Met behulp van een dropdown menu kan de gebruiker switchen tussen verschillende eigenschappen.
@@ -25,4 +25,3 @@ Het grootste probleem zal waarschijnlijk zijn om de data in een juiste vorm te k
 <br></br>
 ###### gelijksoortige applicaties
 In gelijksoortige applicaties valt vooral op dat men de code voor de interactieve wereldkaarten niet schrijft in de JQUERY vorm. In eerdere opdrachten van dataprocessing heb ik de code voor deze kaart wel in JQUERY geschreven. Dus wellicht is het verstandig om dit eerst om te schrijven voordat ik door ga. 
-
