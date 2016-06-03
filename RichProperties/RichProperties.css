@@ -15,7 +15,74 @@ body {
 }
 
 #container1 {
-    height: 400px;
-    width: 650px;
-    margin:0px;
+    height: 600px;
+    width:1300px;
 }
+
+div{
+	float:left;
+}
+
+div.dropdown{
+	position:relative;
+  	left: 20px;
+  	bottom:-7px;
+}
+
+div.dropdown2{
+	position:relative;
+  	left: 1050px;
+  	bottom:-7px;
+}
+
+.btn btn-primary dropdown-toggle{
+	background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.axis path,
+.axis line{
+	fill: none;
+	stroke: #000;
+	shape-rendering: crishpEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+/*.d3-tip {
+  line-height: 2px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 1px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}*/
