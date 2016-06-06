@@ -13,3 +13,9 @@ Stijn Robben
 <br>
 ### day 4
 Begonnen aan Prototype. Dit ging vrij voorspoedig aangezien de scatterplot en barcharts en hun interactiviteit alleen maar te zien hoeven zijn, nog niet functioneel. Morgen vragen uitdenken die ik wil stellen en veel ideeën opdoen van de andere presentaties.
+<br>
+### dag 5
+Vandaag presentatie gehad. Groepsgenootjes waren positief. Niet veel bruikbare feedback gekregen wat betreft de data indeling. Helaas dit weekend weinig tijd om eraan te werken. Maandag verder met coderen. 
+<br>
+### dag 6
+Vandaag de wereldkaart ingekleurd met aan de hand van de GDP data en de muis-hover-event geimplementeerd. Groot probleem vandaag waren de onclick mouse events. Ik weet nog steeds niet hoe dit moet. Er lijkt een probleem met het gebruik van JQuery ervan, aangezien het wel lukt in andere syntax. Maar in de andere syntax kan bootstrap weer niet gebruikt worden. Ik weet dus niet goed wat ik moet doen. Vanavond Sascha een mail sturen en hopen op snel antwoord. Verder vandaag nog bezig geweest met data verzamelen en heb nu een globaal idee hoe ik deze wil indelen. Alleen er nog niet helemaal zeker over. Morgen hopelijk helemaal klaar met de data en meer duidelijkheid over de onclick mouse event. 
