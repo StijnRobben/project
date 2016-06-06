@@ -1,48 +1,4 @@
-/**
-* RichProperties.js
-*
-* Stijn Robben
-* 10559558
-*
-*/
-
-// MAKE WORLDMAP
-$("#container1").datamap({
- scope: 'world',
- done: $(function(datamap) {
-  console.log("hoi");
-  // var mapData = datamap.options.data;
-  console.log(datamap)
-  // datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-  //   var countryData = mapData[geography.id];
-
-  //   // if (typeof countryData != 'undefined') {
-  //   //   setCountry(geography.properties.name, countryData.population);
-  //   };
-  // })
-}),
-geography_config: {
- borderColor: 'rgba(255,255,255,0.3)',
- highlightBorderColor: 'rgba(0,0,0,0.5)',
- popupTemplate: _.template([
-   '<div class="hoverinfo">',
-   '<% if (data.name) { %> <strong><%= data.name %></strong><br/><% } %>',
-       '<% if (data.GDP) { %>',
-       'GDP per capita: <strong><%= data.GDP %><strong><br/> <% } %>',
-       '</div>'
-       ].join('') )
-},
-fills: {
- A: '#fdd0a2',
- B: '#fdae6b',
- C: '#fd8d3c',
- D: '#f16913',
- E: '#d94801',
- F: '#a63603',
- G: '#7f2704',
- defaultFill: 'grey' 
-},
-data: {
+{
   "QAT": {
     "name": "Qatar",
     "fillKey": "G",
@@ -818,5 +774,4 @@ data: {
     "fillKey": "A",
     "GDP": "769.9"
   }
-},
-});
+}
