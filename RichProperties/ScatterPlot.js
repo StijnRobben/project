@@ -5,58 +5,97 @@
 * 10559558
 *
 */
+var margin = {top: 20, right: 20, bottom: 200, left: 150},
+width = 1000 - margin.left - margin.right,
+height = 500 - margin.top - margin.bottom;
 
-var data = [[5,3], [10,17], [2,8], [4,7], [8,10], [9,12], [6,10], [7,12]];
-   
-    var margin = {top: 20, right: 50, bottom: 200, left: 30}
-      , width = 500 - margin.left - margin.right
-      , height = 550 - margin.top - margin.bottom;
-    
-    var x = d3.scale.linear()
-              .domain([0, d3.max(data, function(d) { return d[0]; })])
-              .range([ 0, width ]);
-    
-    var y = d3.scale.linear()
-            .domain([0, d3.max(data, function(d) { return d[1]; })])
-            .range([ height, 0 ]);
- 
-    var chart = d3.select('body')
-  .append('svg:svg')
-  .attr('width', width + margin.right + margin.left)
-  .attr('height', height + margin.top + margin.bottom)
-  .attr('class', 'chart')
+var x = d3.scale.linear()
+.range([0, width]);
 
-    var main = chart.append('g')
-  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-  .attr('width', width)
-  .attr('height', height)
-  .attr('class', 'main')   
-        
-    // draw the x axis
-    var xAxis = d3.svg.axis()
-  .scale(x)
-  .orient('bottom');
+var y = d3.scale.linear()
+.range([height, 0]);
 
-    main.append('g')
-  .attr('transform', 'translate(0,' + height + ')')
-  .attr('class', 'main axis date')
-  .call(xAxis);
+var color = d3.scale.category10();
 
-    // draw the y axis
-    var yAxis = d3.svg.axis()
-  .scale(y)
-  .orient('left');
+var xAxis = d3.svg.axis()
+.scale(x)
+.orient("bottom");
 
-    main.append('g')
-  .attr('transform', 'translate(0,0)')
-  .attr('class', 'main axis date')
-  .call(yAxis);
+var yAxis = d3.svg.axis()
+.scale(y)
+.orient("left");
 
-    var g = main.append("svg:g"); 
-    
-    g.selectAll("scatter-dots")
-      .data(data)
-      .enter().append("svg:circle")
-          .attr("cx", function (d,i) { return x(d[0]); } )
-          .attr("cy", function (d) { return y(d[1]); } )
-          .attr("r", 8);
+var svg = d3.select("body").append("svg")
+.attr("width", width + margin.left + margin.right)
+.attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("ScatTele.txt", function(error, data) {
+  if (error) throw error;
+
+  data.forEach(function(d) {
+
+    d.GDP = +d.GDP;
+    d.TeleCommunications = +d.TeleCommunications;
+    });
+
+  x.domain(d3.extent(data, function(d) { return d.GDP; })).nice();
+  y.domain(d3.extent(data, function(d) { return d.TeleCommunications; })).nice();
+
+  svg.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + height + ")")
+  .call(xAxis)
+  .selectAll("text")  
+  .style("text-anchor", "end")
+  .attr("dx", "-.5em")
+  .attr("dy", ".15em")
+  .attr("transform", "rotate(-40)" )
+  .append("text")
+  .attr("class", "label")
+  .attr("x", width)
+  .attr("y", -6)
+  .style("text-anchor", "end")
+  .text("GDP")
+
+
+  svg.append("g")
+  .attr("class", "y axis")
+  .call(yAxis)
+  .append("text")
+  .attr("class", "label")
+  .attr("transform", "rotate(-90)")
+  .attr("y", 6)
+  .attr("dy", ".71em")
+  .style("text-anchor", "end")
+  .text("Sepal Length (cm)")
+
+  svg.selectAll(".dot")
+  .data(data)
+  .enter().append("circle")
+  .attr("class", "dot")
+  .attr("r", 3.5)
+  .attr("cx", function(d) { return x(d.GDP); })
+  .attr("cy", function(d) { return y(d.TeleCommunications); });
+
+  var legend = svg.selectAll(".legend")
+  .data(color.domain())
+  .enter().append("g")
+  .attr("class", "legend")
+  .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+  .attr("x", width - 18)
+  .attr("width", 18)
+  .attr("height", 18)
+  .style("fill", color);
+
+  legend.append("text")
+  .attr("x", width - 24)
+  .attr("y", 9)
+  .attr("dy", ".35em")
+  .style("text-anchor", "end")
+  .text(function(d) { return d; });
+
+});
