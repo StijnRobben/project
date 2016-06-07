@@ -18,4 +18,13 @@ Begonnen aan Prototype. Dit ging vrij voorspoedig aangezien de scatterplot en ba
 Vandaag presentatie gehad. Groepsgenootjes waren positief. Niet veel bruikbare feedback gekregen wat betreft de data indeling. Helaas dit weekend weinig tijd om eraan te werken. Maandag verder met coderen. 
 <br>
 ### dag 6
-Vandaag de wereldkaart ingekleurd met aan de hand van de GDP data en de muis-hover-event geimplementeerd. Groot probleem vandaag waren de onclick mouse events. Ik weet nog steeds niet hoe dit moet. Er lijkt een probleem met het gebruik van JQuery ervan, aangezien het wel lukt in andere syntax. Maar in de andere syntax kan bootstrap weer niet gebruikt worden. Ik weet dus niet goed wat ik moet doen. Vanavond Sascha een mail sturen en hopen op snel antwoord. Verder vandaag nog bezig geweest met data verzamelen en heb nu een globaal idee hoe ik deze wil indelen. Alleen er nog niet helemaal zeker over. Morgen hopelijk helemaal klaar met de data en meer duidelijkheid over de onclick mouse event. 
+Vandaag de wereldkaart ingekleurd met aan de hand van de GDP data en de muis-hover-event geimplementeerd. Groot probleem vandaag waren de onclick mouse events. Ik weet nog steeds niet hoe dit moet. Er lijkt een probleem met het gebruik van JQuery ervan, aangezien het wel lukt in andere syntax. Maar in de andere syntax kan bootstrap weer niet gebruikt worden. Ik weet dus niet goed wat ik moet doen. Vanavond Sascha een mail sturen en hopen op snel antwoord. Verder vandaag nog bezig geweest met data verzamelen en heb nu een globaal idee hoe ik deze wil indelen. Alleen er nog niet helemaal zeker over. Morgen hopelijk helemaal klaar met de data en meer duidelijkheid over de onclick mouse event.
+<br> 
+### dag 7
+Veel gewerkt aan de verschillende datasets. Tot nu toe alle data van de Military Security en Telecommunications in een goede structuur gekregen voor de scatterplots. Het is nog niet gelukt om de land-codes door te sturen aan de hand van de click-functie. Ik blijf vast steken met de bootstrap struggle. Hopelijk morgen antwoord van Annabel krijgen, zij heeft ongeveer hetzelfde gedaan. Morgen ook weer verder met de dataset van Corruptie en hopelijk eindelijk te horen krijgen hoe het moet met het doorsturen van de data. 
+
+
+
+
+
+
