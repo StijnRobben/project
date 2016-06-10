@@ -14,25 +14,17 @@ body {
 	background-color:antiquewhite;
 }
 
+#option{
+  float:left;
+}
+
 #container1 {
     height: 600px;
-    width:1300px;
+    width:1275px;
 }
 
-div{
-	float:left;
-}
-
-div.dropdown{
-	position:relative;
-  	left: 10px;
-  	bottom:-7px;
-}
-
-div.dropdown2{
-	position:relative;
-  	left: 850px;
-  	bottom:-7px;
+.svg{
+  position: right;
 }
 
 .btn btn-primary dropdown-toggle{
@@ -59,6 +51,12 @@ div.dropdown2{
   fill: brown;
 }
 
+.highlight {
+  fill: #FF0000;
+  r: 8;
+
+}
+
 /*.d3-tip {
   line-height: 2px;
   padding: 12px;
@@ -68,7 +66,7 @@ div.dropdown2{
 }
 
 /* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
+/*.d3-tip:after {
   box-sizing: border-box;
   display: inline;
   font-size: 10px;
@@ -78,11 +76,11 @@ div.dropdown2{
   content: "\25BC";
   position: absolute;
   text-align: center;
-}
+}*/
 
 /* Style northward tooltips differently */
-.d3-tip.n:after {
+/*.d3-tip.n:after {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
-}*/
+}*/*/
