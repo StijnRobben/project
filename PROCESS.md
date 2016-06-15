@@ -34,6 +34,9 @@ Trendline gemaakt om makkelijker een correlatie te zien in de scatterplot. Ook w
 <br>
 ### dag 11
 Gepresenteerd in the Hour of Code. Veel goede feedback gekregen. Met name dat in de scatterplot de x-as het beste in een logartimische schaal kan zijn. Op deze manier is er minder sprake van outliers. Ook kreeg ik gevatte feedback over het inladen van de data en het aanroepen van de functies. Vandaag vooral verder met de barchart aangezien deze nog verre van klaar is. Dit is inmiddels een stress puntje aan het worden aangezien er nog steeds geen vooruitgang is. Wel veel vooruitgang geboekt met de scatterplot. 
+<br>
+### dag 12
+Vandaag veel opgeschoten. Het is gelukt om via de index het geklikte land weer te geven in de barchart en door middel van een formule kunnen ook de 5 landen die een lager GDP hebben dan het geklikte land, en de 5 landen met een hoger GDP weergegeven worden in de barchart. Ook ben ik al aan de slag gegaan met het meegeven van verschillende argumenten aan de functies. Data loopt wel dusdanig uiteen dat het lastig gaat worden om beide visualisaties door middel van 1 functie te maken. Ook moet ik meer aan de slag met m'n data, nameljk het GDP per hoofd in plaats van het markt GDP. Dit bleek een betere maatstaaf voor welvarende landen. 
 
 
 
