@@ -13,10 +13,15 @@ Project
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
 	<script src="worldmap.js"></script>
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 	<link rel= "stylesheet" href = "richproperties.css">
 </head>
 <body>
-	<h1 id = "title"> The properties of rich countries</h1>
+	<div>
+		<h1 id = "title"> The properties of rich countries</h1>
+		<h6 id = "motivation"><br>This visualisation was made after seeing a rather sceptical video of "The School of Life". This is an educational organisation focused on informing people about various aspects of life. In the video they assign certain characteristics to prosperous countries. These characteristics seemed odd and further research revealed that "The School of Life" has no reliable source to substantiate these characteristics. I decided to take matters into my own hands and investige the correlation between the prosperity of a country and the different characteristics, as the school of life claims to be true.
+		</h6>
+	</div>
 
 <!-- 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script> -->
 	<div id="container1"></div>
@@ -25,21 +30,21 @@ Project
     <input name="updateButton" 
            type="button" 
            value="Corruption" 
-           onclick="ScatterCorruption()" />
+           onclick="Scatter("ScatCor.txt", "CORUPPTION")" />
 	</div>
 
 	<div id="option">
     <input name="updateButton" 
            type="button" 
            value="Military Security" 
-           onclick="ScatterMilitarySecurity()" />
+           onclick="Scatter()" />
 	</div>
 
 	<div id="option">
     <input name="updateButton" 
            type="button" 
            value="Telecommunication" 
-           onclick="ScatterTeleCommunication()" />
+           onclick="Barchart()" />
 	</div>
 
 	<div class = "scatterplot">

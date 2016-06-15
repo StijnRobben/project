@@ -5,27 +5,30 @@
 * 10559558
 *
 */
+
 // MAKE WORLDMAP
 new Datamap({
   scope: 'world',
   done: function(datamap) {
     datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
       var country = geography.id
+      var name = geography.properties.name
+      window.name = name
       window.country = country
-      console.log(country);
-      ScatterCorruption()
+      Scatter("Mili.txt", "Military Security", "Military budget")
+      Barchart("Mili.txt", "Military Budget")
   });
 },
 element: document.getElementById('container1'),
 fills: {
-   A: '#fdd0a2',
-   B: '#fdae6b',
-   C: '#fd8d3c',
-   D: '#f16913',
-   E: '#d94801',
-   F: '#a63603',
-   G: '#7f2704',
-   defaultFill: 'grey' 
+ A: '#c6dbef',
+ B: '#9ecae1',
+ C: '#6baed6',
+ D: '#4292c6',
+ E: '#2171b5',
+ F: '#08519c',
+ G: '#08306b',
+ defaultFill: 'grey' 
 },
 geographyConfig: {
     borderColor: 'rgba(255,255,255,0.3)',
@@ -39,1093 +42,1073 @@ geographyConfig: {
 data: {
     "ABW": {
         "country": "Aruba",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "AND": {
         "country": "Andorra",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "AFG": {
         "country": "Afghanistan",
-        "fillKey": "D",
-        "GDP": "20038215159.39"
+        "fillKey": "A",
+        "GDP": "633.57"
     },
     "AGO": {
         "country": "Angola",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "ALB": {
         "country": "Albania",
-        "fillKey": "D",
-        "GDP": "13211513725.59"
+        "fillKey": "C",
+        "GDP": "4564.39"
     },
     "ARE": {
         "country": "United Arab Emirates",
-        "fillKey": "E",
-        "GDP": "399451327433.63"
+        "fillKey": "F",
+        "GDP": "43962.71"
     },
     "ARG": {
         "country": "Argentina",
-        "fillKey": "E",
-        "GDP": "537659972702.09"
+        "fillKey": "D",
+        "GDP": "12509.53"
     },
     "ARM": {
         "country": "Armenia",
-        "fillKey": "D",
-        "GDP": "11644438422.98"
+        "fillKey": "B",
+        "GDP": "3873.53"
     },
     "ASM": {
         "country": "American Samoa",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "ATG": {
         "country": "Antigua and Barbuda",
-        "fillKey": "C",
-        "GDP": "1220976011.11"
+        "fillKey": "D",
+        "GDP": "13432.08"
     },
     "AUS": {
         "country": "Australia",
         "fillKey": "F",
-        "GDP": "1454675479665.84"
+        "GDP": "61979.90"
     },
     "AUT": {
         "country": "Austria",
-        "fillKey": "E",
-        "GDP": "436887543466.95"
+        "fillKey": "F",
+        "GDP": "51122.43"
     },
     "AZE": {
         "country": "Azerbaijan",
-        "fillKey": "D",
-        "GDP": "75198010965.19"
+        "fillKey": "C",
+        "GDP": "7886.46"
     },
     "BDI": {
         "country": "Burundi",
-        "fillKey": "C",
-        "GDP": "3093647226.81"
+        "fillKey": "A",
+        "GDP": "286.00"
     },
     "BEL": {
         "country": "Belgium",
-        "fillKey": "E",
-        "GDP": "531546586178.58"
+        "fillKey": "F",
+        "GDP": "47327.62"
     },
     "BEN": {
         "country": "Benin",
-        "fillKey": "C",
-        "GDP": "9575356734.73"
+        "fillKey": "A",
+        "GDP": "903.46"
     },
     "BFA": {
         "country": "Burkina Faso",
-        "fillKey": "D",
-        "GDP": "12542221941.86"
+        "fillKey": "A",
+        "GDP": "713.06"
     },
     "BGD": {
         "country": "Bangladesh",
-        "fillKey": "E",
-        "GDP": "172886567164.18"
+        "fillKey": "A",
+        "GDP": "1086.81"
     },
     "BGR": {
         "country": "Bulgaria",
-        "fillKey": "D",
-        "GDP": "56717054673.72"
+        "fillKey": "C",
+        "GDP": "7851.27"
     },
     "BHR": {
         "country": "Bahrain",
-        "fillKey": "D",
-        "GDP": "33851063829.79"
+        "fillKey": "E",
+        "GDP": "24855.22"
     },
     "BHS": {
         "country": "Bahamas, The",
-        "fillKey": "C",
-        "GDP": "8510500000.00"
+        "fillKey": "E",
+        "GDP": "22217.49"
     },
     "BIH": {
         "country": "Bosnia and Herzegovina",
-        "fillKey": "D",
-        "GDP": "18521475376.48"
+        "fillKey": "C",
+        "GDP": "4851.66"
     },
     "BLR": {
         "country": "Belarus",
         "fillKey": "D",
-        "GDP": "76139250364.52"
+        "GDP": "8040.05"
     },
     "BLZ": {
         "country": "Belize",
         "fillKey": "C",
-        "GDP": "1699154132.06"
+        "GDP": "4831.18"
     },
     "BMU": {
         "country": "Bermuda",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "BOL": {
         "country": "Bolivia",
-        "fillKey": "D",
-        "GDP": "32996187988.42"
+        "fillKey": "B",
+        "GDP": "3124.08"
     },
     "BRA": {
         "country": "Brazil",
-        "fillKey": "F",
-        "GDP": "2416635506076.31"
+        "fillKey": "D",
+        "GDP": "11726.81"
     },
     "BRB": {
         "country": "Barbados",
-        "fillKey": "C",
-        "GDP": "4354500000.00"
+        "fillKey": "D",
+        "GDP": "15366.29"
     },
     "BRN": {
         "country": "Brunei Darussalam",
-        "fillKey": "D",
-        "GDP": "17104656669.30"
+        "fillKey": "F",
+        "GDP": "40979.64"
     },
     "BTN": {
         "country": "Bhutan",
-        "fillKey": "C",
-        "GDP": "1958803866.95"
+        "fillKey": "B",
+        "GDP": "2560.50"
     },
     "BWA": {
         "country": "Botswana",
-        "fillKey": "D",
-        "GDP": "15813364345.32"
+        "fillKey": "C",
+        "GDP": "7123.34"
     },
     "CAF": {
         "country": "Central African Republic",
-        "fillKey": "C",
-        "GDP": "1722529061.42"
+        "fillKey": "A",
+        "GDP": "358.54"
     },
     "CAN": {
         "country": "Canada",
         "fillKey": "F",
-        "GDP": "1785386649602.19"
+        "GDP": "50230.81"
     },
     "CHE": {
         "country": "Switzerland",
-        "fillKey": "E",
-        "GDP": "701037135966.05"
+        "fillKey": "G",
+        "GDP": "85616.56"
     },
     "CHI": {
         "country": "Channel Islands",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "CHL": {
         "country": "Chile",
-        "fillKey": "E",
-        "GDP": "258061522886.53"
+        "fillKey": "D",
+        "GDP": "14528.33"
     },
     "CHN": {
         "country": "China",
-        "fillKey": "G",
-        "GDP": "10354831729340.40"
+        "fillKey": "C",
+        "GDP": "7590.02"
     },
     "CIV": {
         "country": "Cote d'Ivoire",
-        "fillKey": "D",
-        "GDP": "34253607832.41"
+        "fillKey": "A",
+        "GDP": "1545.94"
     },
     "CMR": {
         "country": "Cameroon",
-        "fillKey": "D",
-        "GDP": "32050817632.96"
+        "fillKey": "A",
+        "GDP": "1407.40"
     },
     "COG": {
         "country": "Congo, Rep.",
-        "fillKey": "D",
-        "GDP": "14177440494.82"
+        "fillKey": "B",
+        "GDP": "3147.07"
     },
     "COL": {
         "country": "Colombia",
-        "fillKey": "E",
-        "GDP": "377739622865.84"
+        "fillKey": "C",
+        "GDP": "7903.93"
     },
     "COM": {
         "country": "Comoros",
-        "fillKey": "B",
-        "GDP": "623751049.73"
+        "fillKey": "A",
+        "GDP": "810.08"
     },
     "CPV": {
         "country": "Cabo Verde",
-        "fillKey": "C",
-        "GDP": "1871187071.00"
+        "fillKey": "B",
+        "GDP": "3641.11"
     },
     "CRI": {
         "country": "Costa Rica",
         "fillKey": "D",
-        "GDP": "49552580683.15"
-    },
-    "CSS": {
-        "country": "Caribbean small states",
-        "fillKey": "D",
-        "GDP": "71288024078.60"
+        "GDP": "10415.44"
     },
     "CUB": {
         "country": "Cuba",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "CUW": {
         "country": "Curacao",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "CYM": {
         "country": "Cayman Islands",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "CYP": {
         "country": "Cyprus",
-        "fillKey": "D",
-        "GDP": "23226158986.17"
+        "fillKey": "E",
+        "GDP": "27194.39"
     },
     "CZE": {
         "country": "Czech Republic",
         "fillKey": "E",
-        "GDP": "205269709743.47"
+        "GDP": "19502.42"
     },
     "DEU": {
         "country": "Germany",
         "fillKey": "F",
-        "GDP": "3868291231823.77"
+        "GDP": "47773.94"
     },
     "DJI": {
         "country": "Djibouti",
-        "fillKey": "C",
-        "GDP": "1589026157.88"
+        "fillKey": "A",
+        "GDP": "1813.60"
     },
     "DMA": {
         "country": "Dominica",
-        "fillKey": "B",
-        "GDP": "524074074.07"
+        "fillKey": "C",
+        "GDP": "7244.50"
     },
     "DNK": {
         "country": "Denmark",
-        "fillKey": "E",
-        "GDP": "342362478767.51"
+        "fillKey": "F",
+        "GDP": "60718.39"
     },
     "DOM": {
         "country": "Dominican Republic",
-        "fillKey": "D",
-        "GDP": "64137819040.49"
+        "fillKey": "C",
+        "GDP": "6163.58"
     },
     "DZA": {
         "country": "Algeria",
-        "fillKey": "E",
-        "GDP": "213518488688.12"
-    },
-    "EAS": {
-        "country": "East Asia & Pacific (all income levels)",
-        "fillKey": "G",
-        "GDP": "21467980438307.30"
+        "fillKey": "C",
+        "GDP": "5484.07"
     },
     "ECU": {
         "country": "Ecuador",
-        "fillKey": "E",
-        "GDP": "100917372000.00"
+        "fillKey": "C",
+        "GDP": "6345.84"
     },
     "EGY": {
         "country": "Egypt, Arab Rep.",
-        "fillKey": "E",
-        "GDP": "301498960051.64"
+        "fillKey": "B",
+        "GDP": "3365.71"
     },
     "ERI": {
         "country": "Eritrea",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "ESP": {
         "country": "Spain",
-        "fillKey": "F",
-        "GDP": "1381342101735.68"
+        "fillKey": "E",
+        "GDP": "29721.60"
     },
     "EST": {
         "country": "Estonia",
-        "fillKey": "D",
-        "GDP": "26485161115.94"
+        "fillKey": "E",
+        "GDP": "20147.78"
     },
     "ETH": {
         "country": "Ethiopia",
-        "fillKey": "D",
-        "GDP": "55612228233.52"
+        "fillKey": "A",
+        "GDP": "573.57"
     },
     "FIN": {
         "country": "Finland",
-        "fillKey": "E",
-        "GDP": "272216575502.25"
+        "fillKey": "F",
+        "GDP": "49842.71"
     },
     "FJI": {
         "country": "Fiji",
         "fillKey": "C",
-        "GDP": "4531817940.97"
+        "GDP": "5112.32"
     },
     "FRA": {
         "country": "France",
         "fillKey": "F",
-        "GDP": "2829192039171.84"
+        "GDP": "42725.74"
     },
     "FRO": {
         "country": "Faroe Islands",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "FSM": {
         "country": "Micronesia, Fed. Sts.",
         "fillKey": "B",
-        "GDP": "318071978.58"
+        "GDP": "3057.09"
     },
     "GAB": {
         "country": "Gabon",
         "fillKey": "D",
-        "GDP": "18179717776.16"
+        "GDP": "10772.06"
     },
     "GBR": {
         "country": "United Kingdom",
         "fillKey": "F",
-        "GDP": "2988893283565.20"
+        "GDP": "46296.98"
     },
     "GEO": {
         "country": "Georgia",
-        "fillKey": "D",
-        "GDP": "16529963187.40"
+        "fillKey": "C",
+        "GDP": "4435.19"
     },
     "GHA": {
         "country": "Ghana",
-        "fillKey": "D",
-        "GDP": "38616536131.65"
+        "fillKey": "A",
+        "GDP": "1441.64"
     },
     "GIN": {
         "country": "Guinea",
-        "fillKey": "C",
-        "GDP": "6624068015.50"
+        "fillKey": "A",
+        "GDP": "539.62"
     },
     "GMB": {
         "country": "Gambia, The",
-        "fillKey": "B",
-        "GDP": "850902397.34"
+        "fillKey": "A",
+        "GDP": "441.29"
     },
     "GNB": {
         "country": "Guinea-Bissau",
-        "fillKey": "C",
-        "GDP": "1022371991.53"
+        "fillKey": "A",
+        "GDP": "567.82"
     },
     "GNQ": {
         "country": "Equatorial Guinea",
-        "fillKey": "D",
-        "GDP": "15529729676.69"
+        "fillKey": "E",
+        "GDP": "18918.28"
     },
     "GRC": {
         "country": "Greece",
         "fillKey": "E",
-        "GDP": "235574074998.31"
+        "GDP": "21672.67"
     },
     "GRD": {
         "country": "Grenada",
-        "fillKey": "B",
-        "GDP": "911803790.37"
+        "fillKey": "D",
+        "GDP": "8573.69"
     },
     "GRL": {
         "country": "Greenland",
-        "fillKey": "C",
-        "GDP": "2441226080.04"
+        "fillKey": "F",
+        "GDP": "43364.88"
     },
     "GTM": {
         "country": "Guatemala",
-        "fillKey": "D",
-        "GDP": "58827085046.95"
+        "fillKey": "B",
+        "GDP": "3673.14"
     },
     "GUM": {
         "country": "Guam",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "GUY": {
         "country": "Guyana",
         "fillKey": "C",
-        "GDP": "3096747286.98"
+        "GDP": "4053.90"
     },
     "HKG": {
         "country": "Hong Kong SAR, China",
-        "fillKey": "E",
-        "GDP": "290895784165.80"
+        "fillKey": "F",
+        "GDP": "40169.54"
     },
     "HND": {
         "country": "Honduras",
-        "fillKey": "D",
-        "GDP": "19385314718.41"
+        "fillKey": "B",
+        "GDP": "2434.83"
     },
     "HRV": {
         "country": "Croatia",
         "fillKey": "D",
-        "GDP": "57113389357.45"
+        "GDP": "13475.26"
     },
     "HTI": {
         "country": "Haiti",
-        "fillKey": "C",
-        "GDP": "8713041022.95"
+        "fillKey": "A",
+        "GDP": "824.16"
     },
     "HUN": {
         "country": "Hungary",
-        "fillKey": "E",
-        "GDP": "138346669914.95"
+        "fillKey": "D",
+        "GDP": "14026.57"
     },
     "IDN": {
         "country": "Indonesia",
-        "fillKey": "E",
-        "GDP": "888538201025.35"
+        "fillKey": "B",
+        "GDP": "3491.93"
     },
     "IMN": {
         "country": "Isle of Man",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "IND": {
         "country": "India",
-        "fillKey": "F",
-        "GDP": "2048517438873.54"
+        "fillKey": "A",
+        "GDP": "1581.51"
     },
     "IRL": {
         "country": "Ireland",
-        "fillKey": "E",
-        "GDP": "250813607686.11"
+        "fillKey": "F",
+        "GDP": "54339.32"
     },
     "IRN": {
         "country": "Iran, Islamic Rep.",
-        "fillKey": "E",
-        "GDP": "425326068422.88"
+        "fillKey": "C",
+        "GDP": "5442.87"
     },
     "IRQ": {
         "country": "Iraq",
-        "fillKey": "E",
-        "GDP": "223500000000.00"
+        "fillKey": "C",
+        "GDP": "6420.14"
     },
     "ISL": {
         "country": "Iceland",
-        "fillKey": "D",
-        "GDP": "17036097481.81"
+        "fillKey": "F",
+        "GDP": "52036.73"
     },
     "ISR": {
         "country": "Israel",
-        "fillKey": "E",
-        "GDP": "305674837195.00"
+        "fillKey": "F",
+        "GDP": "37206.18"
     },
     "ITA": {
         "country": "Italy",
         "fillKey": "F",
-        "GDP": "2141161325367.43"
+        "GDP": "35222.76"
     },
     "JAM": {
         "country": "Jamaica",
-        "fillKey": "D",
-        "GDP": "13891359467.72"
+        "fillKey": "C",
+        "GDP": "5106.08"
     },
     "JOR": {
         "country": "Jordan",
-        "fillKey": "D",
-        "GDP": "35826925774.65"
+        "fillKey": "C",
+        "GDP": "5422.57"
     },
     "JPN": {
         "country": "Japan",
         "fillKey": "F",
-        "GDP": "4601461206885.08"
+        "GDP": "36194.42"
     },
     "KAZ": {
         "country": "Kazakhstan",
-        "fillKey": "E",
-        "GDP": "217872250221.41"
+        "fillKey": "D",
+        "GDP": "12601.62"
     },
     "KEN": {
         "country": "Kenya",
-        "fillKey": "D",
-        "GDP": "60936509777.96"
+        "fillKey": "A",
+        "GDP": "1358.26"
     },
     "KGZ": {
         "country": "Kyrgyz Republic",
-        "fillKey": "C",
-        "GDP": "7404412710.31"
+        "fillKey": "A",
+        "GDP": "1268.86"
     },
     "KHM": {
         "country": "Cambodia",
-        "fillKey": "D",
-        "GDP": "16777820332.71"
+        "fillKey": "A",
+        "GDP": "1094.58"
     },
     "KIR": {
         "country": "Kiribati",
-        "fillKey": "B",
-        "GDP": "166756805.48"
+        "fillKey": "A",
+        "GDP": "1509.52"
     },
     "KNA": {
         "country": "St. Kitts and Nevis",
-        "fillKey": "B",
-        "GDP": "852203083.88"
+        "fillKey": "D",
+        "GDP": "15510.39"
     },
     "KOR": {
         "country": "Korea, Rep.",
-        "fillKey": "F",
-        "GDP": "1410382988616.48"
+        "fillKey": "E",
+        "GDP": "27970.50"
     },
     "KSV": {
         "country": "Kosovo",
         "fillKey": "C",
-        "GDP": "7386758657.29"
+        "GDP": "4051.65"
     },
     "KWT": {
         "country": "Kuwait",
-        "fillKey": "E",
-        "GDP": "163612438510.19"
-    },
-    "LAC": {
-        "country": "Latin America & Caribbean (developing only)",
         "fillKey": "F",
-        "GDP": "4845035083138.30"
-    },
-    "LAO": {
-        "country": "Lao PDR",
-        "fillKey": "D",
-        "GDP": "11997062176.69"
+        "GDP": "43593.70"
     },
     "LBN": {
         "country": "Lebanon",
         "fillKey": "D",
-        "GDP": "45730945273.63"
+        "GDP": "10057.89"
     },
     "LBR": {
         "country": "Liberia",
-        "fillKey": "C",
-        "GDP": "2013000000.00"
+        "fillKey": "A",
+        "GDP": "457.86"
     },
     "LBY": {
         "country": "Libya",
-        "fillKey": "D",
-        "GDP": "41142722414.34"
+        "fillKey": "C",
+        "GDP": "6573.39"
     },
     "LCA": {
         "country": "St. Lucia",
         "fillKey": "C",
-        "GDP": "1404430563.81"
+        "GDP": "7647.53"
     },
     "LIE": {
         "country": "Liechtenstein",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "LKA": {
         "country": "Sri Lanka",
-        "fillKey": "D",
-        "GDP": "78823610056.93"
+        "fillKey": "B",
+        "GDP": "3794.89"
     },
     "LSO": {
         "country": "Lesotho",
-        "fillKey": "C",
-        "GDP": "2181300505.86"
+        "fillKey": "A",
+        "GDP": "1034.19"
     },
     "LTU": {
         "country": "Lithuania",
-        "fillKey": "D",
-        "GDP": "48353937110.26"
+        "fillKey": "E",
+        "GDP": "16489.73"
     },
     "LUX": {
         "country": "Luxembourg",
-        "fillKey": "D",
-        "GDP": "64873963098.49"
+        "fillKey": "G",
+        "GDP": "116612.88"
     },
     "LVA": {
         "country": "Latvia",
         "fillKey": "D",
-        "GDP": "31286809075.23"
+        "GDP": "15692.19"
     },
     "MAC": {
         "country": "Macao SAR, China",
-        "fillKey": "D",
-        "GDP": "55501734046.15"
+        "fillKey": "G",
+        "GDP": "96038.05"
     },
     "MAF": {
         "country": "St. Martin (French part)",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "MAR": {
         "country": "Morocco",
-        "fillKey": "E",
-        "GDP": "110009040838.42"
+        "fillKey": "B",
+        "GDP": "3190.31"
     },
     "MCO": {
         "country": "Monaco",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "MDA": {
         "country": "Moldova",
-        "fillKey": "C",
-        "GDP": "7962423551.54"
+        "fillKey": "B",
+        "GDP": "2238.90"
     },
     "MDG": {
         "country": "Madagascar",
-        "fillKey": "D",
-        "GDP": "10593147380.73"
+        "fillKey": "A",
+        "GDP": "449.40"
     },
     "MDV": {
         "country": "Maldives",
         "fillKey": "C",
-        "GDP": "3061829144.68"
+        "GDP": "7635.48"
     },
     "MEX": {
         "country": "Mexico",
-        "fillKey": "F",
-        "GDP": "1294689733233.03"
+        "fillKey": "D",
+        "GDP": "10325.65"
     },
     "MHL": {
         "country": "Marshall Islands",
         "fillKey": "B",
-        "GDP": "186716625.75"
-    },
-    "MIC": {
-        "country": "Middle income",
-        "fillKey": "G",
-        "GDP": "24748448400393.40"
+        "GDP": "3529.75"
     },
     "MKD": {
         "country": "Macedonia, FYR",
-        "fillKey": "D",
-        "GDP": "11323769141.48"
+        "fillKey": "C",
+        "GDP": "5455.59"
     },
     "MLI": {
         "country": "Mali",
-        "fillKey": "D",
-        "GDP": "12037229619.42"
+        "fillKey": "A",
+        "GDP": "704.51"
     },
     "MLT": {
         "country": "Malta",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "MMR": {
         "country": "Myanmar",
-        "fillKey": "D",
-        "GDP": "64330038664.73"
+        "fillKey": "A",
+        "GDP": "1203.84"
     },
     "MNE": {
         "country": "Montenegro",
         "fillKey": "C",
-        "GDP": "4587928884.17"
+        "GDP": "7378.35"
     },
     "MNG": {
         "country": "Mongolia",
-        "fillKey": "D",
-        "GDP": "12015944336.55"
+        "fillKey": "C",
+        "GDP": "4129.37"
     },
     "MNP": {
         "country": "Northern Mariana Islands",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "MOZ": {
         "country": "Mozambique",
-        "fillKey": "D",
-        "GDP": "15938468562.50"
+        "fillKey": "A",
+        "GDP": "585.62"
     },
     "MRT": {
         "country": "Mauritania",
-        "fillKey": "C",
-        "GDP": "5061180371.05"
+        "fillKey": "A",
+        "GDP": "1274.98"
     },
     "MUS": {
         "country": "Mauritius",
         "fillKey": "D",
-        "GDP": "12630332836.95"
+        "GDP": "10016.65"
     },
     "MWI": {
         "country": "Malawi",
-        "fillKey": "C",
-        "GDP": "4258033615.30"
+        "fillKey": "A",
+        "GDP": "255.04"
     },
     "MYS": {
         "country": "Malaysia",
-        "fillKey": "E",
-        "GDP": "338103822298.27"
+        "fillKey": "D",
+        "GDP": "11307.06"
+    },
+    "NAC": {
+        "country": "North America",
+        "fillKey": "F",
+        "GDP": "54194.61"
     },
     "NAM": {
         "country": "Namibia",
-        "fillKey": "D",
-        "GDP": "12995241138.15"
+        "fillKey": "C",
+        "GDP": "5408.24"
     },
     "NCL": {
         "country": "New Caledonia",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "NER": {
         "country": "Niger",
-        "fillKey": "C",
-        "GDP": "8168695869.87"
+        "fillKey": "A",
+        "GDP": "427.37"
     },
     "NGA": {
         "country": "Nigeria",
-        "fillKey": "E",
-        "GDP": "568508262377.80"
+        "fillKey": "B",
+        "GDP": "3203.30"
     },
     "NIC": {
         "country": "Nicaragua",
-        "fillKey": "D",
-        "GDP": "11805641286.80"
+        "fillKey": "A",
+        "GDP": "1963.05"
     },
     "NLD": {
         "country": "Netherlands",
-        "fillKey": "E",
-        "GDP": "879319321494.64"
+        "fillKey": "F",
+        "GDP": "52138.68"
     },
     "NOR": {
         "country": "Norway",
-        "fillKey": "E",
-        "GDP": "499817138323.20"
+        "fillKey": "G",
+        "GDP": "97299.64"
     },
     "NPL": {
         "country": "Nepal",
-        "fillKey": "D",
-        "GDP": "19769642122.58"
+        "fillKey": "A",
+        "GDP": "701.68"
     },
     "NZL": {
         "country": "New Zealand",
-        "fillKey": "E",
-        "GDP": "199969858903.72"
+        "fillKey": "F",
+        "GDP": "44342.16"
     },
     "OMN": {
         "country": "Oman",
-        "fillKey": "D",
-        "GDP": "81796618985.70"
+        "fillKey": "E",
+        "GDP": "19309.61"
     },
     "PAK": {
         "country": "Pakistan",
-        "fillKey": "E",
-        "GDP": "243631917866.48"
+        "fillKey": "A",
+        "GDP": "1316.61"
     },
     "PAN": {
         "country": "Panama",
         "fillKey": "D",
-        "GDP": "46212600000.00"
+        "GDP": "11948.85"
     },
     "PER": {
         "country": "Peru",
-        "fillKey": "E",
-        "GDP": "202596307719.12"
+        "fillKey": "C",
+        "GDP": "6541.03"
     },
     "PHL": {
         "country": "Philippines",
-        "fillKey": "E",
-        "GDP": "284777093019.07"
+        "fillKey": "B",
+        "GDP": "2872.51"
     },
     "PLW": {
         "country": "Palau",
-        "fillKey": "B",
-        "GDP": "250625562.79"
+        "fillKey": "D",
+        "GDP": "11879.68"
     },
     "PNG": {
         "country": "Papua New Guinea",
-        "fillKey": "D",
-        "GDP": "16928577232.47"
+        "fillKey": "B",
+        "GDP": "2268.16"
     },
     "POL": {
         "country": "Poland",
-        "fillKey": "E",
-        "GDP": "544966555714.06"
+        "fillKey": "D",
+        "GDP": "14336.80"
     },
     "PRI": {
         "country": "Puerto Rico",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
+    },
+    "PRK": {
+        "country": "Korea, Dem. People's Rep.",
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "PRT": {
         "country": "Portugal",
         "fillKey": "E",
-        "GDP": "230116912513.59"
+        "GDP": "22124.37"
     },
     "PRY": {
         "country": "Paraguay",
-        "fillKey": "D",
-        "GDP": "30880859579.51"
+        "fillKey": "C",
+        "GDP": "4712.82"
     },
     "PSS": {
         "country": "Pacific island small states",
-        "fillKey": "C",
-        "GDP": "8699784931.29"
+        "fillKey": "B",
+        "GDP": "3760.71"
     },
     "PYF": {
         "country": "French Polynesia",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "QAT": {
         "country": "Qatar",
-        "fillKey": "E",
-        "GDP": "210109065934.07"
+        "fillKey": "G",
+        "GDP": "96732.40"
     },
     "ROU": {
         "country": "Romania",
-        "fillKey": "E",
-        "GDP": "199043652215.45"
+        "fillKey": "D",
+        "GDP": "10000.00"
     },
     "RUS": {
         "country": "Russian Federation",
-        "fillKey": "F",
-        "GDP": "1860597922763.44"
+        "fillKey": "D",
+        "GDP": "12735.92"
     },
     "RWA": {
         "country": "Rwanda",
-        "fillKey": "C",
-        "GDP": "7890190336.75"
+        "fillKey": "A",
+        "GDP": "695.69"
     },
     "SAS": {
         "country": "South Asia",
-        "fillKey": "F",
-        "GDP": "2588688024254.73"
+        "fillKey": "A",
+        "GDP": "1504.04"
     },
     "SAU": {
         "country": "Saudi Arabia",
         "fillKey": "E",
-        "GDP": "753831733333.33"
+        "GDP": "24406.48"
     },
     "SDN": {
         "country": "Sudan",
-        "fillKey": "D",
-        "GDP": "73814947340.90"
+        "fillKey": "A",
+        "GDP": "1875.84"
     },
     "SEN": {
         "country": "Senegal",
-        "fillKey": "D",
-        "GDP": "15657551477.20"
+        "fillKey": "A",
+        "GDP": "1067.13"
     },
     "SGP": {
         "country": "Singapore",
-        "fillKey": "E",
-        "GDP": "307859758503.67"
+        "fillKey": "F",
+        "GDP": "56284.33"
     },
     "SLB": {
         "country": "Solomon Islands",
-        "fillKey": "C",
-        "GDP": "1158183053.76"
+        "fillKey": "B",
+        "GDP": "2024.19"
     },
     "SLE": {
         "country": "Sierra Leone",
-        "fillKey": "C",
-        "GDP": "4837512587.35"
+        "fillKey": "A",
+        "GDP": "765.96"
     },
     "SLV": {
         "country": "El Salvador",
-        "fillKey": "D",
-        "GDP": "25163700000.00"
+        "fillKey": "C",
+        "GDP": "4119.99"
     },
     "SMR": {
         "country": "San Marino",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "SOM": {
         "country": "Somalia",
-        "fillKey": "C",
-        "GDP": "5707000000.00"
+        "fillKey": "A",
+        "GDP": "542.62"
     },
     "SRB": {
         "country": "Serbia",
-        "fillKey": "D",
-        "GDP": "43866423166.94"
+        "fillKey": "C",
+        "GDP": "6152.92"
     },
     "SSD": {
         "country": "South Sudan",
-        "fillKey": "D",
-        "GDP": "13282084041.62"
+        "fillKey": "A",
+        "GDP": "1115.09"
     },
     "STP": {
         "country": "Sao Tome and Principe",
-        "fillKey": "B",
-        "GDP": "337413478.15"
+        "fillKey": "A",
+        "GDP": "1810.72"
     },
     "SUR": {
         "country": "Suriname",
-        "fillKey": "C",
-        "GDP": "5210303030.30"
+        "fillKey": "D",
+        "GDP": "9680.12"
     },
     "SVK": {
         "country": "Slovak Republic",
         "fillKey": "E",
-        "GDP": "100248607784.10"
+        "GDP": "18500.66"
     },
     "SVN": {
         "country": "Slovenia",
-        "fillKey": "D",
-        "GDP": "49491440620.37"
+        "fillKey": "E",
+        "GDP": "24001.90"
     },
     "SWE": {
         "country": "Sweden",
-        "fillKey": "E",
-        "GDP": "571090480171.00"
+        "fillKey": "F",
+        "GDP": "58898.93"
     },
     "SWZ": {
         "country": "Swaziland",
-        "fillKey": "C",
-        "GDP": "4412891830.03"
+        "fillKey": "B",
+        "GDP": "3477.15"
     },
     "SXM": {
         "country": "Sint Maarten (Dutch part)",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "SYC": {
         "country": "Seychelles",
-        "fillKey": "C",
-        "GDP": "1422608276.10"
+        "fillKey": "D",
+        "GDP": "15564.64"
     },
     "SYR": {
         "country": "Syrian Arab Republic",
-        "fillKey": "No data",
-        "GDP": "No data"
-    },
-    "TCA": {
-        "country": "Turks and Caicos Islands",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "TCD": {
         "country": "Chad",
-        "fillKey": "D",
-        "GDP": "13922224560.79"
+        "fillKey": "A",
+        "GDP": "1024.67"
     },
     "TGO": {
         "country": "Togo",
-        "fillKey": "C",
-        "GDP": "4518443476.63"
+        "fillKey": "A",
+        "GDP": "635.04"
     },
     "THA": {
         "country": "Thailand",
-        "fillKey": "E",
-        "GDP": "404823952117.93"
+        "fillKey": "C",
+        "GDP": "5977.38"
     },
     "TJK": {
         "country": "Tajikistan",
-        "fillKey": "C",
-        "GDP": "9241627840.61"
+        "fillKey": "A",
+        "GDP": "1114.01"
     },
     "TKM": {
         "country": "Turkmenistan",
         "fillKey": "D",
-        "GDP": "47931929824.56"
+        "GDP": "9031.51"
     },
     "TLS": {
         "country": "Timor-Leste",
-        "fillKey": "C",
-        "GDP": "1417000000.00"
+        "fillKey": "A",
+        "GDP": "1169.04"
     },
     "TON": {
         "country": "Tonga",
-        "fillKey": "B",
-        "GDP": "434380116.96"
+        "fillKey": "C",
+        "GDP": "4113.99"
     },
     "TTO": {
         "country": "Trinidad and Tobago",
-        "fillKey": "D",
-        "GDP": "28882663253.84"
+        "fillKey": "E",
+        "GDP": "21323.75"
     },
     "TUN": {
         "country": "Tunisia",
-        "fillKey": "D",
-        "GDP": "48612652412.09"
+        "fillKey": "C",
+        "GDP": "4420.70"
     },
     "TUR": {
         "country": "Turkey",
-        "fillKey": "E",
-        "GDP": "798429233036.33"
+        "fillKey": "D",
+        "GDP": "10515.01"
     },
     "TUV": {
         "country": "Tuvalu",
-        "fillKey": "A",
-        "GDP": "37859550.40"
+        "fillKey": "B",
+        "GDP": "3826.90"
     },
     "TZA": {
         "country": "Tanzania",
-        "fillKey": "D",
-        "GDP": "48056680982.15"
+        "fillKey": "A",
+        "GDP": "955.14"
     },
     "UGA": {
         "country": "Uganda",
-        "fillKey": "D",
-        "GDP": "26998477288.85"
+        "fillKey": "A",
+        "GDP": "714.57"
     },
     "UKR": {
         "country": "Ukraine",
-        "fillKey": "E",
-        "GDP": "131805126738.29"
+        "fillKey": "B",
+        "GDP": "3082.46"
     },
     "URY": {
         "country": "Uruguay",
-        "fillKey": "D",
-        "GDP": "57471030095.37"
+        "fillKey": "E",
+        "GDP": "16806.77"
     },
     "USA": {
         "country": "United States",
-        "fillKey": "G",
-        "GDP": "17419000000000.00"
+        "fillKey": "F",
+        "GDP": "54629.50"
     },
     "UZB": {
         "country": "Uzbekistan",
-        "fillKey": "D",
-        "GDP": "62643953021.76"
+        "fillKey": "B",
+        "GDP": "2036.69"
     },
     "VCT": {
         "country": "St. Vincent and the Grenadines",
-        "fillKey": "B",
-        "GDP": "729309384.44"
+        "fillKey": "C",
+        "GDP": "6668.89"
     },
     "VEN": {
         "country": "Venezuela, RB",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "VIR": {
         "country": "Virgin Islands (U.S.)",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "VNM": {
         "country": "Vietnam",
-        "fillKey": "E",
-        "GDP": "186204652922.26"
+        "fillKey": "B",
+        "GDP": "2052.32"
     },
     "VUT": {
         "country": "Vanuatu",
         "fillKey": "B",
-        "GDP": "814954306.97"
+        "GDP": "3147.96"
     },
     "WSM": {
         "country": "Samoa",
-        "fillKey": "B",
-        "GDP": "800418989.62"
+        "fillKey": "C",
+        "GDP": "4172.22"
     },
     "YEM": {
         "country": "Yemen, Rep.",
-        "fillKey": "No data",
-        "GDP": "No data"
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "ZAF": {
         "country": "South Africa",
-        "fillKey": "E",
-        "GDP": "350140810003.32"
+        "fillKey": "C",
+        "GDP": "6483.85"
     },
     "COD": {
         "country": "Congo, Dem. Rep.",
-        "fillKey": "D",
-        "GDP": "33121070959.39"
+        "fillKey": "A",
+        "GDP": "442.34"
     },
     "ZMB": {
         "country": "Zambia",
-        "fillKey": "D",
-        "GDP": "27066230009.10"
+        "fillKey": "A",
+        "GDP": "1721.62"
     },
     "ZWE": {
         "country": "Zimbabwe",
-        "fillKey": "D",
-        "GDP": "14196912534.63"
+        "fillKey": "A",
+        "GDP": "931.20"
     }
-}
+},
 });

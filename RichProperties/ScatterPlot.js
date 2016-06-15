@@ -6,19 +6,28 @@
 *
 */
 
-function ScatterCorruption(){
+function Scatter(dataset, title, ytitle){
+
+	d3.select(".scat").remove();
+
+	var xValue = function(d) { return d.GDP;}
+	var yValue = function(d) { return d.Variable;}
 
 	// determine parameters
-	var margin = {top: 20, right: 20, bottom: 200, left: 50},
-	width = 600 - margin.left - margin.right,
-	height = 500 - margin.top - margin.bottom;
+	var margin = {top: 100, right: 20, bottom: 200, left: 70},
+		width = 600 - margin.left - margin.right,
+		height = 600 - margin.top - margin.bottom;
+
+	// formatters for axis and labels
+	var currencyFormat = d3.format("0.2f");
+	var decimalFormat = d3.format("0.2f");
 
 	// determine x scale
 	var x = d3.scale.linear()
 	.range([0, width]);
 
 	// determine y scale
-	var y = d3.scale.linear()
+	var y = d3.scale.log()
 	.range([height, 0]);
 
 	// determine x-axis
@@ -33,13 +42,21 @@ function ScatterCorruption(){
 
 	// make svg
 	var svg = d3.select("body").append("svg")
+	.attr("class", "scat")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+	// add the tooltip area to the webpage
+	var tooltip = d3.select("body").append("div")
+	    .attr("class", "tooltip")
+	    .style("opacity", 0);
+
+	console.log(dataset)
+
 	// load in data
-	d3.tsv("ScatCor.txt", function(error, data) {
+	d3.tsv(dataset, function(error, data) {
 		if (error) throw error;
 
 	  // convert data
@@ -49,31 +66,33 @@ function ScatterCorruption(){
 	  	d.Variable = +d.Variable;
 	  });
 
+	  console.log(data)
+
 	  // extract the x labels for the axis and scale domain
 		// var xLabels = data.map(function (d) { return d['GDP']; })
 
 	  // x and y labels
 	  x.domain(d3.extent(data, function(d) { return d.GDP; }));
-	  y.domain(d3.extent(data, function(d) { return d.Variable; }));
+	  y.domain(d3.extent(data, function(d) { return d.Variable;}));
 
 	  // make x-axis
-	  svg.append("g")
-	  .attr("class", "x axis")
-	  .attr("transform", "translate(0," + height + ")")
-	  .call(xAxis)
-	  .selectAll("text")  
-	  .style("text-anchor", "end")
-	  .attr("dx", "-.5em")
-	  .attr("dy", ".15em")
-	  .attr("transform", "rotate(-40)" )
+	svg.append("g")
+	.attr("class", "x axis")
+	.attr("transform", "translate(0," + height + ")")
+	.call(xAxis)
+	.selectAll("text")  
+	.style("text-anchor", "end")
+	.attr("dx", "-.5em")
+	.attr("dy", ".15em")
+	.attr("transform", "rotate(-40)" )
 
 		// make x-axis label
-		svg.append("text")
-		.attr("x", (width -20))
-		.attr("y", height - 5)
-		.attr("class", "text-label")
-		.attr("text-anchor", "end")
-		.text("GDP");
+	svg.append("text")
+	.attr("x", (width -20))
+	.attr("y", height - 5)
+	.attr("class", "text-label")
+	.attr("text-anchor", "end")
+	.text("GDP per Capita");
 
 	// make y-axis
 	svg.append("g")
@@ -82,35 +101,55 @@ function ScatterCorruption(){
 	.append("text")
 	.attr("class", "label")
 	.attr("transform", "rotate(-90)")
-	.attr("y", -40)
+	.attr("y", -60)
 	.attr("dy", ".71em")
 	.style("text-anchor", "end")
-	.text("corruption points")
+	.text(ytitle)
 
 	// make dots
 	svg.selectAll(".dot")
 	.data(data)
 	.enter().append("circle")
 	.attr("id", function(d) { return (d.CountryCode); })
+	.attr("name", function(d) { return (d.CountryName); })
 	.attr("r", 3.5)
 	.attr("cx", function(d) { return x(d.GDP); })
-	.attr("cy", function(d) { return y(d.Variable); });
+	.attr("cy", function(d) { return y(d.Variable); })
+	.on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", 1)
+               .style("color", "white")
+          tooltip.html(d["CountryName"] + "<br/> GDP: " + xValue(d) 
+	        + "<br> Military Budget: " + yValue(d))
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
 
 	// select element from clicked country
 	var clicked = document.getElementById(country)
 
+	// check if country has data of this variable
+	if (clicked == null){
+		window.alert("Sorry, this country has no data of this variable")
+	}
+
 	// add class to this element
 	clicked.classList.add("highlight");
-	console.log(clicked)
 
 	// chart title
 	svg.append("text")
 	.attr("x", (width + (margin.left + margin.right) )/ 2)
-	.attr("y", 0)
+	.attr("y", -50)
 	.attr("text-anchor", "middle")
 	.style("font-size", "16px")
 	.style("font-family", "sans-serif")
-	.text("Corruption");
+	.text(title);
 
 	// get the x and y values for least squares
 	var xSeries = data.map(function(d) {return parseFloat(d['GDP']); });
@@ -138,20 +177,21 @@ function ScatterCorruption(){
 	.attr("stroke", "steelblue")
 	.attr("stroke-width", 1.5);
 
+		console.log(leastSquaresCoeff[0])
 		// display equation on the chart
 		// svg.append("text")
 		// .text("eq: " + decimalFormat(leastSquaresCoeff[0]) + "x + " + 
 		// 	decimalFormat(leastSquaresCoeff[1]))
 		// .attr("class", "text-label")
-		// .attr("x", function(d) {return xScale(x2) - 60;})
-		// .attr("y", function(d) {return yScale(y2) - 30;});
+		// .attr("x", function(d) {return x(x2) - 100;})
+		// .attr("y", function(d) {return y(y2) - 225;});
 
-		// display r-square on the chart
+		// // display r-square on the chart
 		// svg.append("text")
 		// .text("r-sq: " + decimalFormat(leastSquaresCoeff[2]))
 		// .attr("class", "text-label")
-		// .attr("x", function(d) {return xScale(x2) - 60;})
-		// .attr("y", function(d) {return yScale(y2) - 10;});
+		// .attr("x", function(d) {return x(x2) - 60;})
+		// .attr("y", function(d) {return y(y2) - 210;});
 	});
 
 	// returns slope, intercept and r-square of the line
@@ -162,14 +202,14 @@ function ScatterCorruption(){
 		var yBar = ySeries.reduce(reduceSumFunc) * 1.0 / ySeries.length;
 
 		var ssXX = xSeries.map(function(d) { return Math.pow(d - xBar, 2); })
-		.reduce(reduceSumFunc);
+			.reduce(reduceSumFunc);
 		
 		var ssYY = ySeries.map(function(d) { return Math.pow(d - yBar, 2); })
-		.reduce(reduceSumFunc);
-		
+			.reduce(reduceSumFunc);
+			
 		var ssXY = xSeries.map(function(d, i) { return (d - xBar) * (ySeries[i] - yBar); })
-		.reduce(reduceSumFunc);
-		
+			.reduce(reduceSumFunc);
+			
 		var slope = ssXY / ssXX;
 		var intercept = yBar - (xBar * slope);
 		var rSquare = Math.pow(ssXY, 2) / (ssXX * ssYY);
@@ -182,8 +222,8 @@ function ScatterMilitarySecurity(){
 
 	// determine parameters
 	var margin = {top: 20, right: 20, bottom: 200, left: 140},
-	width = 600 - margin.left - margin.right,
-	height = 500 - margin.top - margin.bottom;
+		width = 600 - margin.left - margin.right,
+		height = 500 - margin.top - margin.bottom;
 
 	// determine x scale
 	var x = d3.scale.linear()
@@ -327,14 +367,14 @@ function ScatterMilitarySecurity(){
 		var yBar = ySeries.reduce(reduceSumFunc) * 1.0 / ySeries.length;
 
 		var ssXX = xSeries.map(function(d) { return Math.pow(d - xBar, 2); })
-		.reduce(reduceSumFunc);
+			.reduce(reduceSumFunc);
 		
 		var ssYY = ySeries.map(function(d) { return Math.pow(d - yBar, 2); })
-		.reduce(reduceSumFunc);
-		
+			.reduce(reduceSumFunc);
+			
 		var ssXY = xSeries.map(function(d, i) { return (d - xBar) * (ySeries[i] - yBar); })
-		.reduce(reduceSumFunc);
-		
+			.reduce(reduceSumFunc);
+			
 		var slope = ssXY / ssXX;
 		var intercept = yBar - (xBar * slope);
 		var rSquare = Math.pow(ssXY, 2) / (ssXX * ssYY);
@@ -347,8 +387,8 @@ function ScatterTeleCommunication(){
 
 	// determine parameters
 	var margin = {top: 20, right: 20, bottom: 200, left: 50},
-	width = 600 - margin.left - margin.right,
-	height = 500 - margin.top - margin.bottom;
+		width = 600 - margin.left - margin.right,
+		height = 500 - margin.top - margin.bottom;
 
 	// determine x scale
 	var x = d3.scale.linear()
@@ -492,14 +532,14 @@ function ScatterTeleCommunication(){
 		var yBar = ySeries.reduce(reduceSumFunc) * 1.0 / ySeries.length;
 
 		var ssXX = xSeries.map(function(d) { return Math.pow(d - xBar, 2); })
-		.reduce(reduceSumFunc);
+			.reduce(reduceSumFunc);
 		
 		var ssYY = ySeries.map(function(d) { return Math.pow(d - yBar, 2); })
-		.reduce(reduceSumFunc);
-		
+			.reduce(reduceSumFunc);
+			
 		var ssXY = xSeries.map(function(d, i) { return (d - xBar) * (ySeries[i] - yBar); })
-		.reduce(reduceSumFunc);
-		
+			.reduce(reduceSumFunc);
+			
 		var slope = ssXY / ssXX;
 		var intercept = yBar - (xBar * slope);
 		var rSquare = Math.pow(ssXY, 2) / (ssXX * ssYY);
