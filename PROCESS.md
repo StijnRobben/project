@@ -37,7 +37,9 @@ Gepresenteerd in the Hour of Code. Veel goede feedback gekregen. Met name dat in
 <br>
 ### dag 12
 Vandaag veel opgeschoten. Het is gelukt om via de index het geklikte land weer te geven in de barchart en door middel van een formule kunnen ook de 5 landen die een lager GDP hebben dan het geklikte land, en de 5 landen met een hoger GDP weergegeven worden in de barchart. Ook ben ik al aan de slag gegaan met het meegeven van verschillende argumenten aan de functies. Data loopt wel dusdanig uiteen dat het lastig gaat worden om beide visualisaties door middel van 1 functie te maken. Ook moet ik meer aan de slag met m'n data, nameljk het GDP per hoofd in plaats van het markt GDP. Dit bleek een betere maatstaaf voor welvarende landen. 
-
+<br>
+### dag 13
+Grotendeels bezig geweest met het werkend krijgen van de verschillende buttons. Een groot struikel punt waren de verschillende groten van de datasets. Het was belangrijk om te zorgen dat de yas soms logaritmische en soms linear gemaakt werden. Ook moest de y as alleen op de grootste waarde van de mini dataset van de barchart gemaakt worden. Omdat anders soms de verschillen tussen landen te groot zijn. Vanavond nog even de data voor de corruptie op orde krijgen en morgen nog even snel voor de presentatie zorgen dat ook die knop werkt. Dan dit weekend me ontfermen over de knoppen die de barchart verwisselen. 
 
 
 
