@@ -6,12 +6,12 @@
 	*
 	*/
 
-function Barchart(dataset, ytitle){
+function Barchart(dataset, ytitle, tiptext){
 	
 	d3.select(".barchart").remove();
 
 	// declaring the margin
-	var margin = { top: 20, right: 15, bottom: 200, left: 140 },
+	var margin = { top: 20, right: 15, bottom: 200, left: 80 },
 		width = 650 - margin.right - margin.left,
 		height = 550 - margin.top - margin.bottom;
 
@@ -20,7 +20,7 @@ function Barchart(dataset, ytitle){
 		.rangeRoundBands([0, width], 0.2, 0.2)
 
 	// define y-axis scale
-	var yScale = d3.scale.log()
+	var yScale = d3.scale.linear()
 		.range([height, 0]);
 
 	// define x-axis
@@ -38,7 +38,8 @@ function Barchart(dataset, ytitle){
 		.attr('class', 'd3-tip')
 		.offset([-10, 0])
 		.html(function(d) {
-			return "GDP: <span style='color:red'>" + d.GDP + "</span>";
+			return "GDP: <span style='color:red'>" + d.GDP + 
+			"</span><br>" + tiptext+ " <span style='color:red'> " + d.Variable;
 		})
 
 	// define SVG
@@ -61,6 +62,12 @@ function Barchart(dataset, ytitle){
 		  	// convert data
 		  	data.forEach(function(d) {
 
+		  	// make reasonable numbers for y axis of right dataset
+		  	if (dataset == "Mili.txt"){
+		  		d.GDP = +d.GDP;
+		  		d.Variable = +d.Variable/1000000000;
+	  		}
+
 		  	d.GDP = +d.GDP;
 		  	d.Variable = +d.Variable;
 	  	});
@@ -72,23 +79,26 @@ function Barchart(dataset, ytitle){
 			}
 		}
 
+		console.log(country)
 		console.log(index)
 		console.log(data[index]);
+		console.log(dataset)
+		console.log(data.length)
+		console.log(tiptext)
 
 		var datatemp = [];
 
 		// get the index of 5 countries with a lower GDP and 5 with a higher GDP
 		for (var s = index -5; s < index +6; s += 1){
-			if (s > 147){
-				break
+			if (s > 0 && s < data.length-1){
+				datatemp.push(data[s])
 			}
 			console.log(s)
-			datatemp.push(data[s])
 		}
 		console.log(datatemp)
 
 	  	xScale.domain(datatemp.map(function(d){return d.CountryName}));
-	  	yScale.domain(d3.extent(data, function(d) { return d.Variable;}));
+	  	yScale.domain([0,d3.max(datatemp, function(d) { return d.Variable;})]);
 
 		// draw the bars
 		svg.selectAll(".bar")

@@ -15,8 +15,9 @@ new Datamap({
       var name = geography.properties.name
       window.name = name
       window.country = country
-      Scatter("Mili.txt", "Military Security", "Military budget")
-      Barchart("Mili.txt", "Military Budget")
+      // Scatter("Mili.txt", "Military Security", "Military budget")
+      Barchart("Tele.txt", "Internet users", "Users")
+      Scatter("Tele.txt", "Internet users", "Internet Users", "Users")
   });
 },
 element: document.getElementById('container1'),
