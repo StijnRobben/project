@@ -12,24 +12,16 @@ h4 {
 h6{
   font-family: times;
   font-size: 12px;
-  text-align: center;
 }
 
 body {
 	background-color:antiquewhite;
 }
 
-#option{
+#scatterplot{
+  position: relative;
+  top: 500px;
   float:left;
-  /*background-color: #4CAF50;
-    border: none;
-    color: steelblue ;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;*/
 }
 
 #container1 {
@@ -37,18 +29,18 @@ body {
     width:1275px;
 }
 
-.svg{
-  position: right;
+.scat{
+  position: relative;
+  top:-800px;
+  left:0px;
 }
 
-/*.btn btn-primary dropdown-toggle{
-	background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}*/
+.barchart{
+  position:relative;
+  top: -200px;
+  left:200px;
+  float:left;
+}
 
 .axis path,
 .axis line{
@@ -105,5 +97,29 @@ body {
   pointer-events: none;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 6px;
-  
+}
+
+.legend {
+    position: relative;
+    width: 250px;
+    top:-350px;
+    left:40px;
+}
+
+#option{
+  position:relative;
+  float:left;
+  top:-130px;
+}
+
+ul li{
+    font-size: 80px; /* or whatever */
+   padding-right: 50px;
+   margin: 0 0 -80px 0;
+}
+
+ul li span{
+  font-size: 14px;
+  position:relative;
+  top: -18px;
 }

@@ -15,46 +15,72 @@ Project
 	<script src="worldmap.js"></script>
 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 	<link rel= "stylesheet" href = "richproperties.css">
+<!-- 	<script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+	<script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
+	<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>	 -->
 </head>
 <body>
 	<div>
 		<h1 id = "title"> The properties of rich countries</h1>
-		<h6 id = "motivation"><br>This visualisation was made after seeing a rather sceptical video of "The School of Life". This is an educational organisation focused on informing people about various aspects of life. In the video they assign certain characteristics to prosperous countries. These characteristics seemed odd and further research revealed that "The School of Life" has no reliable source to substantiate these characteristics. I decided to take matters into my own hands and investige the correlation between the prosperity of a country and the different characteristics, as the school of life claims to be true.
+		<h6 id = "motivation"><br>This visualisation was made after seeing a rather sceptical video of "The School of Life". This is an educational organisation focused on informing people about various aspects of life. In the video they assign certain characteristics to prosperous countries. These characteristics seemed odd and further research revealed that "The School of Life" has no reliable source to substantiate these characteristics. I decided to take matters into my own hands and investige the correlation between the prosperity of a country and the different characteristics, as the school of life claims to be true.<br>
+		The characteristics that the school of life assign to prosperous countries are: <u>Military Security</u>, <u>Corruption</u> & <u>Tele communications</u><br>
 		</h6>
 	</div>
 
 <!-- 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script> -->
 	<div id="container1"></div>
 
-	<div id="option">
-    <input name="updateButton" 
-           type="button" 
-           value="Telecommunications" 
-           onclick="Barchart('Tele.txt', 'Internet Users', 'Users');Scatter('Tele.txt', 'Telecommunication', 'Internet Users', 'Users'); "/>
+	<div class = "legend">
+		<ul type = "square">
+			<li style = "color: #c6dbef"><span style = "color : black">< $2000</span></li>
+			<li style = "color: #9ecae1"><span style = "color : black">$2000 - $4000</span></li>
+			<li style = "color: #6baed6"><span style = "color : black">$4000 - $8000</span></li>
+			<li style = "color: #4292c6"><span style = "color : black">$8000 - $16000</span></li>
+			<li style = "color: #2171b5"><span style = "color : black">$16000 - $32000</span></li>
+			<li style = "color: #08519c"><span style = "color : black">$32000 - $64000</span></li>
+			<li style = "color: #08306b"><span style = "color : black">$64000 - $128000</span></li>			
+		</ul>
 	</div>
 
-	<div id="option">
-    <input name="updateButton" 
-           type="button" 
-           value="Military Security" 
-           onclick="Barchart('Mili.txt', 'Military Budget x 10^9', 'Budget:');Scatter('Mili.txt', 'Military Budget', 'Miliitary Budget', 'Budget'); "/> 
-	</div>
+	<div id = "option">
+		<div id="option">
+	    <input name="updateButton" 
+	           type="button" 
+	           value="Telecommunications" 
+	           onclick="Barchart('Tele.txt', 'Internet Users', 'Users');Scatter('Tele.txt', 'Telecommunication', 'Internet Users', 'Users'); "/>
+		</div>
 
-	<div id="option">
-    <input name="updateButton" 
-           type="button" 
-           value="Corruption" 
-           onclick="Barchart()" />
+		<div id="option">
+	    <input name="updateButton" 
+	           type="button" 
+	           value="Military Security" 
+	           onclick="Barchart('Mili.txt', 'Military Budget x 10^9', 'Budget:');Scatter('Mili.txt', 'Military Budget', 'Miliitary Budget', 'Budget'); "/> 
+		</div>
+
+		<div id="option">
+	    <input name="updateButton" 
+	           type="button" 
+	           value="Corruption" 
+	           onclick="Barchart('Cor.txt', 'Corruption Points', 'Points:'); Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points'); "/>
+		</div>
+
+		<div id="option">
+	    <input name="updateButton" 
+	           type="button" 
+	           value="Random" 
+	           onclick="Barchart('Cor.txt', 'Corruption Points', 'Points:', 'random'); Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points'); "/>
+		</div>
 	</div>
 
 	<div class = "scatterplot">
 		<script src = "ScatterPlot.js"></script>
+		<script src = "Barchart.js"></script>
 	</div>
 
 	<script src = "RichProperties.js"></script>
 
 	<script src = "Barchart.js"></script>
 
-	<center><h4>data obtained from &copy; <a href = "http://data.worldbank.org">Worldbank</a><h4><center>
+<!-- 	<center><h4>data obtained from &copy; <a href = "http://data.worldbank.org">Worldbank</a><h4><center> -->
 </body>
 </html>

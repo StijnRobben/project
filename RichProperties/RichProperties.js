@@ -15,6 +15,7 @@ new Datamap({
       var name = geography.properties.name
       window.name = name
       window.country = country
+      console.log(country)
       // Scatter("Mili.txt", "Military Security", "Military budget")
       Barchart("Tele.txt", "Internet users", "Users")
       Scatter("Tele.txt", "Internet users", "Internet Users", "Users")
@@ -41,6 +42,11 @@ geographyConfig: {
   }
 },
 data: {
+    "-99": {
+        "country": "Somaliland",
+        "fillKey": "No Data",
+        "GDP": "No Data"
+    },
     "ABW": {
         "country": "Aruba",
         "fillKey": "No Data",
@@ -326,6 +332,11 @@ data: {
         "fillKey": "B",
         "GDP": "3365.71"
     },
+    "ESH": {
+        "country": "Western Sahara",
+        "fillKey": "No Data",
+        "GDP": "No Data"
+    },
     "ERI": {
         "country": "Eritrea",
         "fillKey": "No Data",
@@ -430,6 +441,11 @@ data: {
         "country": "Guatemala",
         "fillKey": "B",
         "GDP": "3673.14"
+    },
+    "GUF": {
+        "country": "French Guiana",
+        "fillKey": "No Data",
+        "GDP": "No Data"
     },
     "GUM": {
         "country": "Guam",
@@ -615,6 +631,11 @@ data: {
         "country": "Luxembourg",
         "fillKey": "G",
         "GDP": "116612.88"
+    },
+    "LAO": {
+        "country": "Laos",
+        "fillKey": "A",
+        "GDP": "1793.47"
     },
     "LVA": {
         "country": "Latvia",
@@ -1021,6 +1042,11 @@ data: {
         "fillKey": "D",
         "GDP": "10515.01"
     },
+    "TWN": {
+        "country": "Taiwan",
+        "fillKey": "No Data",
+        "GDP": "No Data"
+    },
     "TUV": {
         "country": "Tuvalu",
         "fillKey": "B",
@@ -1111,5 +1137,5 @@ data: {
         "fillKey": "A",
         "GDP": "931.20"
     }
-},
+}
 });

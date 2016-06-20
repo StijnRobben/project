@@ -6,8 +6,9 @@
 	*
 	*/
 
-function Barchart(dataset, ytitle, tiptext){
+function Barchart(dataset, ytitle, tiptext, random){
 	
+	// delete old barchart
 	d3.select(".barchart").remove();
 
 	// declaring the margin
@@ -38,8 +39,8 @@ function Barchart(dataset, ytitle, tiptext){
 		.attr('class', 'd3-tip')
 		.offset([-10, 0])
 		.html(function(d) {
-			return "GDP: <span style='color:red'>" + d.GDP + 
-			"</span><br>" + tiptext+ " <span style='color:red'> " + d.Variable;
+			return "GDP: <span style='color:red'>" + "$" + d.GDP + 
+			"</span><br>" + tiptext + " <span style='color:red'> " + d.Variable;
 		})
 
 	// define SVG
@@ -62,12 +63,13 @@ function Barchart(dataset, ytitle, tiptext){
 		  	// convert data
 		  	data.forEach(function(d) {
 
-		  	// make reasonable numbers for y axis of right dataset
+		  	// make reasonable numbers for y axis of the right dataset
 		  	if (dataset == "Mili.txt"){
 		  		d.GDP = +d.GDP;
 		  		d.Variable = +d.Variable/1000000000;
 	  		}
 
+		  	// turn values into integers
 		  	d.GDP = +d.GDP;
 		  	d.Variable = +d.Variable;
 	  	});
@@ -79,23 +81,24 @@ function Barchart(dataset, ytitle, tiptext){
 			}
 		}
 
-		console.log(country)
-		console.log(index)
-		console.log(data[index]);
-		console.log(dataset)
-		console.log(data.length)
-		console.log(tiptext)
-
+		// create temporary dataset
 		var datatemp = [];
 
 		// get the index of 5 countries with a lower GDP and 5 with a higher GDP
 		for (var s = index -5; s < index +6; s += 1){
-			if (s > 0 && s < data.length-1){
+			if (s >= 0 && s < data.length){
 				datatemp.push(data[s])
 			}
-			console.log(s)
 		}
-		console.log(datatemp)
+
+		// generate 11 random integers
+		if (random == "random"){
+			datatemp = [];
+			for (var f = 0; f < 10; f += 1){
+				var randint = Math.floor((Math.random() * data.length));
+				datatemp.push(data[randint])
+			}
+		}
 
 	  	xScale.domain(datatemp.map(function(d){return d.CountryName}));
 	  	yScale.domain([0,d3.max(datatemp, function(d) { return d.Variable;})]);
