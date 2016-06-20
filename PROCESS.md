@@ -40,6 +40,12 @@ Vandaag veel opgeschoten. Het is gelukt om via de index het geklikte land weer t
 <br>
 ### dag 13
 Grotendeels bezig geweest met het werkend krijgen van de verschillende buttons. Een groot struikel punt waren de verschillende groten van de datasets. Het was belangrijk om te zorgen dat de yas soms logaritmische en soms linear gemaakt werden. Ook moest de y as alleen op de grootste waarde van de mini dataset van de barchart gemaakt worden. Omdat anders soms de verschillen tussen landen te groot zijn. Vanavond nog even de data voor de corruptie op orde krijgen en morgen nog even snel voor de presentatie zorgen dat ook die knop werkt. Dan dit weekend me ontfermen over de knoppen die de barchart verwisselen. 
+<br>
+### dag 14
+Hard aan de slag gegaan met de legenda. Deze is inmiddels af. Straks presenteren
+<br>
+### dag 15
+Lang gezeten aan de trendline bug. Deze bleef te veel doorstijgen en dalen waardoor hij buiten de assen kwam. Dit is inmiddel beter. Ook alle landen die geen extra data gaven aangepast en morgen verder met de checklist van bugs. Waarschijnlijk zal ik me het eerst ontfermen over de nieuwe button die ik wil meegeven. De random button voegt tot dusver niet veel toe. 
 
 
 
