@@ -40,7 +40,7 @@ function Barchart(dataset, ytitle, tiptext, random){
 		.offset([-10, 0])
 		.html(function(d) {
 			return "GDP: <span style='color:red'>" + "$" + d.GDP + 
-			"</span><br>" + tiptext + " <span style='color:red'> " + d.Variable;
+			"</span><br>" + tiptext + " <span style='color:red'> " + d.Variable.toFixed(2);
 		})
 
 	// define SVG
@@ -100,6 +100,7 @@ function Barchart(dataset, ytitle, tiptext, random){
 			}
 		}
 
+	  	// scale both axis
 	  	xScale.domain(datatemp.map(function(d){return d.CountryName}));
 	  	yScale.domain([0,d3.max(datatemp, function(d) { return d.Variable;})]);
 
@@ -137,7 +138,7 @@ function Barchart(dataset, ytitle, tiptext, random){
 			.append("text")
 				.attr("transform", "rotate(-90)")
 				.attr("y", 6)
-				.attr("dy", ".71em")
+				.attr("dy", "-4.11em")
 				.style("text-anchor", "end")
 				.text(ytitle);
 	});

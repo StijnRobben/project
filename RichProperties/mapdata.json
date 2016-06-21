@@ -1,44 +1,4 @@
-/**
-* RichProperties.js
-*
-* Stijn Robben
-* 10559558
-*
-*/
-// MAKE WORLDMAP
-new Datamap({
-  scope: 'world',
-  done: function(datamap) {
-    datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-      var country = geography.id
-      var name = geography.properties.name
-      window.name = name
-      window.country = country
-      Barchart("Tele.txt", "Internet users", "Users")
-      Scatter("Tele.txt", "Internet users", "Internet Users", "Users")
-  });
-},
-element: document.getElementById('container1'),
-fills: {
- A: '#c6dbef',
- B: '#9ecae1',
- C: '#6baed6',
- D: '#4292c6',
- E: '#2171b5',
- F: '#08519c',
- G: '#08306b',
- defaultFill: 'grey' 
-},
-geographyConfig: {
-    borderColor: 'rgba(255,255,255,0.3)',
-    highlightBorderColor: 'rgba(0,0,0,0.5)',
-    popupTemplate: function(geo, data) {
-      return data && data.GDP ?
-      '<div class="hoverinfo"><strong>' + geo.properties.name + '</strong><br/>GDP: <strong> $ ' + data.GDP + '</strong></div>' :
-      '<div class="hoverinfo"><strong>' + geo.properties.name + '</strong></div>';
-  }
-},
-data: {
+{
     "-99": {
         "country": "Somaliland",
         "fillKey": "No Data",
@@ -1135,4 +1095,3 @@ data: {
         "GDP": "931.20"
     }
 }
-});

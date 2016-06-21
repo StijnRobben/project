@@ -5,11 +5,16 @@
 * 10559558
 *
 */
-
 function Scatter(dataset, title, ytitle, tiptext){
 
+	// create titles above chart
+	document.getElementById("bigtitle").innerHTML = ytitle;
+	document.getElementById("smalltitle").innerHTML = "of " + name;
+
+	// delete old scatterplot
 	d3.select(".scat").remove();
 
+	// determine values
 	var xValue = function(d) { return d.GDP;}
 	var yValue = function(d) { return d.Variable;}
 
@@ -17,10 +22,6 @@ function Scatter(dataset, title, ytitle, tiptext){
 	var margin = {top: 100, right: 20, bottom: 200, left: 70},
 		width = 600 - margin.left - margin.right,
 		height = 600 - margin.top - margin.bottom;
-
-	// formatters for axis and labels
-	// var currencyFormat = d3.format("0.2f");
-	// var decimalFormat = d3.format("0.2f");
 
 	// determine x scale
 	var x = d3.scale.linear()
@@ -30,9 +31,10 @@ function Scatter(dataset, title, ytitle, tiptext){
 	var y = d3.scale.linear()
 	.range([height, 0]);
 
+	// create different y axis for mili-dataset
 	if (dataset == "Mili.txt"){
 		var y = d3.scale.log()
-	.range([height, 0]);
+		.range([height, 0]);
 	}
 
 	// determine x-axis
@@ -110,17 +112,17 @@ function Scatter(dataset, title, ytitle, tiptext){
 	.attr("class", "y axis")
 	.call(yAxis)
 	.append("text")
-	.attr("class", "label")
-	.attr("transform", "rotate(-90)")
-	.attr("y", -60)
-	.attr("dy", ".71em")
-	.style("text-anchor", "end")
-	.text(ytitle)
+		.attr("transform", "rotate(-90)")
+		.attr("y", 6)
+		.attr("dy", "-4.11em")
+		.style("text-anchor", "end")
+		.text(ytitle);
 
 	// make dots
 	svg.selectAll(".dot")
 	.data(data)
 	.enter().append("circle")
+	.attr("class", "circle")
 	.attr("id", function(d) { return (d.CountryCode); })
 	.attr("name", function(d) { return (d.CountryName); })
 	.attr("r", 3.5)
@@ -132,7 +134,7 @@ function Scatter(dataset, title, ytitle, tiptext){
                .style("opacity", 1)
                .style("color", "white")
           tooltip.html(d["CountryName"] + "<br/> GDP: <span style='color:red'> " + "$" + xValue(d) 
-	        + "</span><br>"  +tiptext + ": <span style='color:red'> " + yValue(d) + "</span><br>")
+	        + "</span><br>"  + tiptext + ": <span style='color:red'> " + yValue(d).toFixed(2) + "</span><br>")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
@@ -149,26 +151,21 @@ function Scatter(dataset, title, ytitle, tiptext){
 	if (clicked == null){
 		d3.select(".scat").remove();
 		d3.select(".barchart").remove();
-		window.alert("Sorry, this country has no data of this variable")
+		document.getElementById("nodata").innerHTML = "Sorry, no data of this country";
 		return;
 	}
 
+	// delete the "no data" message
+	document.getElementById("nodata").innerHTML = "";
+
 	// add class to this element
 	clicked.classList.add("highlight");
-
-	// chart title
-	svg.append("text")
-	.attr("x", (width + (margin.left + margin.right) )/ 2)
-	.attr("y", -50)
-	.attr("text-anchor", "middle")
-	.style("font-size", "16px")
-	.style("font-family", "sans-serif")
-	.text(title);
 
 	// get the x and y values for least squares
 	var xSeries = data.map(function(d) {return parseFloat(d['GDP']); });
 	var ySeries = data.map(function(d) { return parseFloat(d['Variable']); });
 
+	// all values for trendline
 	var leastSquaresCoeff = leastSquares(xSeries, ySeries);
 
 	// apply the reults of the least squares regression
@@ -176,12 +173,6 @@ function Scatter(dataset, title, ytitle, tiptext){
 	var y1 = leastSquaresCoeff[0]*xSeries[0] + leastSquaresCoeff[1];
 	var x2 = xSeries[xSeries.length - 1];
 	var y2 = leastSquaresCoeff[0] * xSeries[xSeries.length - 1] + leastSquaresCoeff[1];
-
-	console.log(y2)
-
-	console.log(d3.min(ySeries));
-	console.log(leastSquaresCoeff[1]);
-	console.log(leastSquaresCoeff[0]);
 
 	// change endpoints of the regression line if y2 is lower than minimal y-axis value
 	if (y2 < d3.min(ySeries)){
@@ -193,6 +184,7 @@ function Scatter(dataset, title, ytitle, tiptext){
 		x2 = (d3.max(ySeries) - leastSquaresCoeff[1]) / leastSquaresCoeff[0];
 	}
 
+	// make trendline
 	var trendData = [[x1,y1,x2,y2]];
 	var trendline = svg.selectAll(".trendline")
 	.data(trendData);

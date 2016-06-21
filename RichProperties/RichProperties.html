@@ -15,9 +15,6 @@ Project
 	<script src="worldmap.js"></script>
 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 	<link rel= "stylesheet" href = "richproperties.css">
-<!-- 	<script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
-	<script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
-	<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>	 -->
 </head>
 <body>
 	<div>
@@ -27,8 +24,11 @@ Project
 		</h6>
 	</div>
 
-<!-- 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script> -->
 	<div id="container1"></div>
+
+	<div id= "legendtitle">
+		<h5>GDP per capita<h5>
+	</div>
 
 	<div class = "legend">
 		<ul type = "square">
@@ -38,44 +38,26 @@ Project
 			<li style = "color: #4292c6"><span style = "color : black">$8000 - $16000</span></li>
 			<li style = "color: #2171b5"><span style = "color : black">$16000 - $32000</span></li>
 			<li style = "color: #08519c"><span style = "color : black">$32000 - $64000</span></li>
-			<li style = "color: #08306b"><span style = "color : black">$64000 - $128000</span></li>			
+			<li style = "color: #08306b"><span style = "color : black">$64000 - $128000</span></li>
+			<li style = "color: #7e7e7e"><span style = "color : black">No Data</span></li>				
 		</ul>
 	</div>
 
-	<div id = "option">
-		<div id="option">
-	    <input name="updateButton" 
-	           type="button" 
-	           value="Telecommunications" 
-	           onclick="Barchart('Tele.txt', 'Internet Users', 'Users');Scatter('Tele.txt', 'Telecommunication', 'Internet Users', 'Users'); "/>
-		</div>
-
-		<div id="option">
-	    <input name="updateButton" 
-	           type="button" 
-	           value="Military Security" 
-	           onclick="Barchart('Mili.txt', 'Military Budget x 10^9', 'Budget:');Scatter('Mili.txt', 'Military Budget', 'Miliitary Budget', 'Budget'); "/> 
-		</div>
-
-		<div id="option">
-	    <input name="updateButton" 
-	           type="button" 
-	           value="Corruption" 
-	           onclick="Barchart('Cor.txt', 'Corruption Points', 'Points:'); Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points'); "/>
-		</div>
-
-		<div id="option">
-	    <input name="updateButton" 
-	           type="button" 
-	           value="Random" 
-	           onclick="Barchart('Cor.txt', 'Corruption Points', 'Points:', 'random'); Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points'); "/>
-		</div>
+	<div id = "buttons">
+	    <button class = "option" onclick="Barchart('Tele.txt', 'Internet Users', 'Users');Scatter('Tele.txt', 'Telecommunication', 'Internet Users', 'Users'); ">Telecommunications</button>
+		<button class = "option" onclick = "Barchart('Mili.txt', 'Military Budget x 10^9', 'Budget:');Scatter('Mili.txt', 'Military Budget', 'Military Budget', 'Budget'); ">Military Security</buton>
+		<button class = "option" onclick = "Barchart('Cor.txt', 'Corruption Points', 'Points:'); Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points');  ">Corruption</buton>
+		<button class = "option" onclick = "Barchart('Cor.txt', 'Corruption Points', 'Points:', 'random'); Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points'); ">Random</buton>
 	</div>
 
-	<div class = "scatterplot">
-		<script src = "ScatterPlot.js"></script>
-		<script src = "Barchart.js"></script>
-	</div>
+	<p id="bigtitle"></p>
+
+	<p id="smalltitle"></p>
+
+	<p id="nodata"></p>
+
+	<script src = "ScatterPlot.js"></script>
+	<script src = "Barchart.js"></script>
 
 	<script src = "RichProperties.js"></script>
 

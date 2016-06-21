@@ -1,3 +1,4 @@
+/*top page title*/
 #title {
 	text-align: center;
 	font-family: verdana;
@@ -5,6 +6,29 @@
 	margin:0px;
 }
 
+/*map*/
+#container1 {
+    height: 600px;
+    width:1275px;
+}
+
+/*big graph title*/
+#bigtitle{
+  position: relative;
+  font-size: 30px;
+  top: -250px;
+  left:40px;
+}
+
+/*small graph title*/
+#smalltitle{
+  position: relative;
+  font-size: 20px;
+  top: -260px;
+  left:60px;
+}
+
+/*all text*/
 h4 {
 	font-family: verdana;
 	font-size:10px;
@@ -14,39 +38,55 @@ h6{
   font-size: 12px;
 }
 
+/*the whole body*/
 body {
 	background-color:antiquewhite;
 }
 
+/*scatterplot*/
 #scatterplot{
   position: relative;
-  top: 500px;
+  top: 900px;
   float:left;
-}
-
-#container1 {
-    height: 600px;
-    width:1275px;
 }
 
 .scat{
   position: relative;
-  top:-800px;
+  top:-750px;
   left:0px;
 }
 
+.circle{
+  fill:#555555;
+  r: 4;
+}
+
+.circle:hover{
+  fill:red;
+}
+
+.highlight {
+  fill: #DD0000;
+  r: 8;
+}
+
+/*barchart*/
 .barchart{
   position:relative;
-  top: -200px;
-  left:200px;
+  top: -150px;
+  left:50px;
   float:left;
 }
 
-.axis path,
-.axis line{
-	fill: none;
-	stroke: #000;
-	shape-rendering: crishpEdges;
+.tooltip {
+  box-sizing: border-box;
+  position: absolute;
+  padding:15px;
+  text-align: center;
+  font-size: 14px;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
 }
 
 .bar {
@@ -55,11 +95,6 @@ body {
 
 .bar:hover {
   fill: brown;
-}
-
-.highlight {
-  fill: #DD0000;
-  r: 8;
 }
 
 .d3-tip {
@@ -88,38 +123,59 @@ body {
   left: 0;
 }
 
-.tooltip {
-  box-sizing: border-box;
-  position: absolute;
-  padding:15px;
-  text-align: center;
-  font-size: 14px;
-  pointer-events: none;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 6px;
+/*all axis*/
+.axis path,
+.axis line{
+  fill: none;
+  stroke: #000;
 }
 
+/*legend*/
 .legend {
-    position: relative;
-    width: 250px;
-    top:-350px;
-    left:40px;
-}
-
-#option{
-  position:relative;
-  float:left;
-  top:-130px;
+  position: relative;
+  width: 250px;
+  top:-420px;
+  left:40px;
 }
 
 ul li{
-    font-size: 80px; /* or whatever */
-   padding-right: 50px;
-   margin: 0 0 -80px 0;
+  font-size: 80px;
+  padding-right: 50px;
+  margin: 0 0 -80px 0;
 }
 
 ul li span{
   font-size: 14px;
   position:relative;
   top: -18px;
+}
+
+#legendtitle{
+  position:relative;
+  top: -380px;
+  left: 25px;
+}
+
+/*buttons*/
+#buttons{
+  position:relative;
+  float:left;
+  top:-180px;
+}
+
+.option{
+  position:relative;
+  float:left;
+  top:-180px;
+  border-radius:4px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px;
+  cursor: pointer;
 }
