@@ -46,6 +46,9 @@ Hard aan de slag gegaan met de legenda. Deze is inmiddels af. Straks presenteren
 <br>
 ### dag 15
 Lang gezeten aan de trendline bug. Deze bleef te veel doorstijgen en dalen waardoor hij buiten de assen kwam. Dit is inmiddel beter. Ook alle landen die geen extra data gaven aangepast en morgen verder met de checklist van bugs. Waarschijnlijk zal ik me het eerst ontfermen over de nieuwe button die ik wil meegeven. De random button voegt tot dusver niet veel toe. 
+<br>
+### dag 16
+Vandaag veel voor elkaar gekregen. Ik heb ervoor gezorgd dat grote getallen goed in de tooltip passen. Ook ontstaan er nu titels boven de barcharts, namelijk die van het geklikte land en de eigenschap die er in de grafieken weergegeven wordt. Tevens een titel toegevoegd aan de legenda. Ook zijn de knoppen nu mooier en aangepast. Er is echter nu wel weer een probleem met het positioneren van het 2 grafieken. Morgen of vanavond proberen om dit te fixen. Ook komt er nu een tekst te staan met "Sorry, no data available of this country" wanneer er geen data van een land is. Eerst was dit een irritante pop-up. Er zijn nog genoeg dingen die ik moet doen. De random knop moet bijvoorbeeld veel beter en er moet nog wat verklarende tekst als introductie. Tot slot nog veel bezig geweest met wat design van m'n visualisatie. Morgen zorgen dat m'n data niet meer hardcoded hoeft te staan in m'n map-script. Ook moeten de tooltips nog een beetje anders bij verschillende datasets. En het belangrijkste is dat ik morgen en overmorgen nog alles goed gepositioneerd krijg in het document. Vanavond beginnen aan het verslag. 
 
 
 
