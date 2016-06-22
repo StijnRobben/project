@@ -42,13 +42,16 @@ Vandaag veel opgeschoten. Het is gelukt om via de index het geklikte land weer t
 Grotendeels bezig geweest met het werkend krijgen van de verschillende buttons. Een groot struikel punt waren de verschillende groten van de datasets. Het was belangrijk om te zorgen dat de yas soms logaritmische en soms linear gemaakt werden. Ook moest de y as alleen op de grootste waarde van de mini dataset van de barchart gemaakt worden. Omdat anders soms de verschillen tussen landen te groot zijn. Vanavond nog even de data voor de corruptie op orde krijgen en morgen nog even snel voor de presentatie zorgen dat ook die knop werkt. Dan dit weekend me ontfermen over de knoppen die de barchart verwisselen. 
 <br>
 ### dag 14
-Hard aan de slag gegaan met de legenda. Deze is inmiddels af. Straks presenteren
+Hard aan de slag gegaan met de legenda. Deze helaas in de html moeten schrijven omdat het niet lukte om hier een juiste functie voor te maken. Voordeel is dat de legende er nu wel piekfijn uitziet en makkelijk te interpreteren is. Deze is inmiddels af. Straks presenteren
 <br>
 ### dag 15
 Lang gezeten aan de trendline bug. Deze bleef te veel doorstijgen en dalen waardoor hij buiten de assen kwam. Dit is inmiddel beter. Ook alle landen die geen extra data gaven aangepast en morgen verder met de checklist van bugs. Waarschijnlijk zal ik me het eerst ontfermen over de nieuwe button die ik wil meegeven. De random button voegt tot dusver niet veel toe. 
 <br>
 ### dag 16
 Vandaag veel voor elkaar gekregen. Ik heb ervoor gezorgd dat grote getallen goed in de tooltip passen. Ook ontstaan er nu titels boven de barcharts, namelijk die van het geklikte land en de eigenschap die er in de grafieken weergegeven wordt. Tevens een titel toegevoegd aan de legenda. Ook zijn de knoppen nu mooier en aangepast. Er is echter nu wel weer een probleem met het positioneren van het 2 grafieken. Morgen of vanavond proberen om dit te fixen. Ook komt er nu een tekst te staan met "Sorry, no data available of this country" wanneer er geen data van een land is. Eerst was dit een irritante pop-up. Er zijn nog genoeg dingen die ik moet doen. De random knop moet bijvoorbeeld veel beter en er moet nog wat verklarende tekst als introductie. Tot slot nog veel bezig geweest met wat design van m'n visualisatie. Morgen zorgen dat m'n data niet meer hardcoded hoeft te staan in m'n map-script. Ook moeten de tooltips nog een beetje anders bij verschillende datasets. En het belangrijkste is dat ik morgen en overmorgen nog alles goed gepositioneerd krijg in het document. Vanavond beginnen aan het verslag. 
+<br>
+### dag 17
+Een dropdown menu gemaakt van de knop, waarmee je de verschillende eigenschappen kan selecteren. Ook veel gespeeld met het positioneren van de visualisaties en de titels. Daarnaast is de inleidende tekst nu ook veel duidelijker en is er een korte "gebruiksaanwijzing" die het gemakkelijker maakt voor de gebruiker om m'n visualisatie te gebruiken. Ook staan er nu bronnen onder aan de pagina en is het "geen data berichtje" nu een stuk vriendelijker. Tot slot heb ik een functie toegevoegd die ervoor zorgt dat wanneer de gebruiker op een land klikt, de pagina direct naar de scatterplot en de barchart springt. De trendline is nu ook beter, schaalt beter naar de verschillende y-assen. Ook al grotendeels begonnen aan verslag. Morgen nog een paar kleine dingen doen en het verslag afmaken. 
 
 
 
