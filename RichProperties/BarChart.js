@@ -1,4 +1,4 @@
-	/**
+ 	/**
 	* BarChart.js
 	*
 	* Stijn Robben
@@ -12,8 +12,8 @@ function Barchart(dataset, ytitle, tiptext, random){
 	d3.select(".barchart").remove();
 
 	// declaring the margin
-	var margin = { top: 20, right: 15, bottom: 200, left: 80 },
-		width = 650 - margin.right - margin.left,
+	var margin = { top: 20, right: 20, bottom: 200, left: 90 },
+		width = 600 - margin.right - margin.left,
 		height = 550 - margin.top - margin.bottom;
 
 	// define x-axis scale
@@ -138,7 +138,7 @@ function Barchart(dataset, ytitle, tiptext, random){
 			.append("text")
 				.attr("transform", "rotate(-90)")
 				.attr("y", 6)
-				.attr("dy", "-4.11em")
+				.attr("dy", "-4.21em")
 				.style("text-anchor", "end")
 				.text(ytitle);
 	});

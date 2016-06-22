@@ -6,6 +6,27 @@
 *
 */
 // MAKE WORLDMAP
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
 new Datamap({
   scope: 'world',
   done: function(datamap) {
@@ -14,8 +35,9 @@ new Datamap({
       var name = geography.properties.name
       window.name = name
       window.country = country
-      Barchart("Tele.txt", "Internet users", "Users")
-      Scatter("Tele.txt", "Internet users", "Internet Users", "Users")
+      Barchart("Tele.txt", "Internet users per 100 people", "Users")
+      Scatter("Tele.txt", "Internet users", "Internet Users per 100 people", "Users")
+      bottom();
   });
 },
 element: document.getElementById('container1'),

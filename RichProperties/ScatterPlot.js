@@ -5,11 +5,15 @@
 * 10559558
 *
 */
+function bottom() {
+	document.getElementById( 'bigtitle' ).scrollIntoView({block: "end", behavior: "smooth"});
+};
+
 function Scatter(dataset, title, ytitle, tiptext){
 
 	// create titles above chart
-	document.getElementById("bigtitle").innerHTML = ytitle;
-	document.getElementById("smalltitle").innerHTML = "of " + name;
+	document.getElementById("bigtitle").innerHTML = title;
+	// document.getElementById("smalltitle").innerHTML = "of " + name;
 
 	// delete old scatterplot
 	d3.select(".scat").remove();
@@ -19,9 +23,9 @@ function Scatter(dataset, title, ytitle, tiptext){
 	var yValue = function(d) { return d.Variable;}
 
 	// determine parameters
-	var margin = {top: 100, right: 20, bottom: 200, left: 70},
+	var margin = {top: 20, right: 20, bottom: 200, left: 70},
 		width = 600 - margin.left - margin.right,
-		height = 600 - margin.top - margin.bottom;
+		height = 550 - margin.top - margin.bottom;
 
 	// determine x scale
 	var x = d3.scale.linear()
@@ -36,6 +40,7 @@ function Scatter(dataset, title, ytitle, tiptext){
 		var y = d3.scale.log()
 		.range([height, 0]);
 	}
+
 
 	// determine x-axis
 	var xAxis = d3.svg.axis()
@@ -60,14 +65,12 @@ function Scatter(dataset, title, ytitle, tiptext){
 	    .attr("class", "tooltip")
 	    .style("opacity", 0);
 
-	console.log(dataset)
-
 	// load in data
 	d3.tsv(dataset, function(error, data) {
 		if (error) throw error;
 
-		  // convert data
-		  data.forEach(function(d) {
+			// convert data
+			data.forEach(function(d) {
 
 		  	// make reasonable numbers for y axis of right dataset
 		  	if (dataset == "Mili.txt"){
@@ -77,17 +80,17 @@ function Scatter(dataset, title, ytitle, tiptext){
 
 		  	d.GDP = +d.GDP;
 		  	d.Variable = +d.Variable;
-	  });
+	  	});
 
-	  console.log(data)
+		// x and y labels
+		x.domain(d3.extent(data, function(d) { return d.GDP; }));
+		y.domain([0,100]);
 
-	  // extract the x labels for the axis and scale domain
-		// var xLabels = data.map(function (d) { return d['GDP']; })
-
-	  // x and y labels
-	  x.domain(d3.extent(data, function(d) { return d.GDP; }));
-	  y.domain(d3.extent(data, function(d) { return d.Variable;}));
-
+	  	// make y axis from 0 - 100 for corruption points
+		if(dataset == "Mili.txt"){
+			y.domain(d3.extent(data, function(d) { return d.Variable;}));
+		}
+		
 	  // make x-axis
 	svg.append("g")
 	.attr("class", "x axis")
@@ -146,6 +149,7 @@ function Scatter(dataset, title, ytitle, tiptext){
 
 	// select element from clicked country
 	var clicked = document.getElementById(country)
+	console.log(clicked)
 
 	// check if country has data of this variable
 	if (clicked == null){
@@ -155,7 +159,7 @@ function Scatter(dataset, title, ytitle, tiptext){
 		return;
 	}
 
-	// delete the "no data" message
+	// delete the "no data" message when new land is clicked
 	document.getElementById("nodata").innerHTML = "";
 
 	// add class to this element
@@ -175,14 +179,23 @@ function Scatter(dataset, title, ytitle, tiptext){
 	var y2 = leastSquaresCoeff[0] * xSeries[xSeries.length - 1] + leastSquaresCoeff[1];
 
 	// change endpoints of the regression line if y2 is lower than minimal y-axis value
-	if (y2 < d3.min(ySeries)){
-		y2 = d3.min(ySeries);
-		x2 = (d3.min(ySeries) - leastSquaresCoeff[1]) / leastSquaresCoeff[0];
+	
+	if (dataset == "Mili.txt" || dataset =="Tele.txt"){
+		if (y2 < d3.min(ySeries)){
+			y2 = d3.min(ySeries);
+			x2 = (d3.min(ySeries) - leastSquaresCoeff[1]) / leastSquaresCoeff[0];
+		}
+		if(y2 > d3.max(ySeries)){
+			y2 = d3.max(ySeries);
+			x2 = (d3.max(ySeries) - leastSquaresCoeff[1]) / leastSquaresCoeff[0];
+		}
 	}
-	if(y2 > d3.max(ySeries)){
-		y2 = d3.max(ySeries);
-		x2 = (d3.max(ySeries) - leastSquaresCoeff[1]) / leastSquaresCoeff[0];
-	}
+
+	// make trendline long enough for y axis starting form 0
+	if (y2 < 0){
+			y2 = 0;
+			x2 = - leastSquaresCoeff[1] / leastSquaresCoeff[0];
+		}
 
 	// make trendline
 	var trendData = [[x1,y1,x2,y2]];
