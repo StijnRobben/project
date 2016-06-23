@@ -52,6 +52,12 @@ Vandaag veel voor elkaar gekregen. Ik heb ervoor gezorgd dat grote getallen goed
 <br>
 ### dag 17
 Een dropdown menu gemaakt van de knop, waarmee je de verschillende eigenschappen kan selecteren. Ook veel gespeeld met het positioneren van de visualisaties en de titels. Daarnaast is de inleidende tekst nu ook veel duidelijker en is er een korte "gebruiksaanwijzing" die het gemakkelijker maakt voor de gebruiker om m'n visualisatie te gebruiken. Ook staan er nu bronnen onder aan de pagina en is het "geen data berichtje" nu een stuk vriendelijker. Tot slot heb ik een functie toegevoegd die ervoor zorgt dat wanneer de gebruiker op een land klikt, de pagina direct naar de scatterplot en de barchart springt. De trendline is nu ook beter, schaalt beter naar de verschillende y-assen. Ook al grotendeels begonnen aan verslag. Morgen nog een paar kleine dingen doen en het verslag afmaken. 
+<br>
+### dag 18
+De laatste bugs eruit gehaald en nog een paar kleine dingen gedaan aan de opmaak. Het verslag was gisteren al voor de helft af. Straks thuis alle problemen noteren waar ik in het proces tegenaan ben gelopen en verwerken in het verslag.
+<br>
+### dag 19
+Klaar met verslag en ingeleverd. Voornamelijk code opgeschoond. Verder geen grote inhoudelijke veranderingen meer. Deze hebben voornamelijk in de eerste 2 weken plaatsgevonden. 
 
 
 
