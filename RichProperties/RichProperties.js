@@ -5,8 +5,8 @@
 * 10559558
 *
 */
-// MAKE WORLDMAP
-//When the user clicks on the button, 
+
+//When the user clicks on the random-button, 
 //toggle between hiding and showing the dropdown content
 function myDropdown() {
     document.getElementById("dropdown").classList.toggle("show");
@@ -27,6 +27,12 @@ window.onclick = function(event) {
   }
 }
 
+// makes browser scroll down to charts (only works in Firefox)
+function bottom() {
+    document.getElementById( 'footer' ).scrollIntoView({block: "end", behavior: "smooth"});
+};
+
+// make worldmap
 new Datamap({
   scope: 'world',
   done: function(datamap) {
@@ -35,8 +41,8 @@ new Datamap({
       var name = geography.properties.name
       window.name = name
       window.country = country
-      Barchart("Tele.txt", "Internet users per 100 people", "Users")
-      Scatter("Tele.txt", "Internet users", "Internet Users per 100 people", "Users")
+      barchart("Tele.txt", "Internet users per 100 people", "Users")
+      scatter("Tele.txt", "Internet users", "Internet Users per 100 people", "Users")
       bottom();
   });
 },

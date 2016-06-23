@@ -1,3 +1,13 @@
+/**
+* RichProperties.css
+*
+* Stijn Robben
+* 10559558
+*
+* stylesheet
+*
+*/
+
 /*top page title*/
 #title {
 	text-align: center;
@@ -122,7 +132,7 @@ body {
 /*legend*/
 .legend {
   position: relative;
-  width: 250px;
+  width: 205px;
   top:-420px;
   left:40px;
   margin-bottom: -420px;
@@ -142,7 +152,7 @@ ul li span{
 
 #legendtitle{
   position:relative;
-  max-width: 300px;
+  max-width: 200px;
   left: 25px;
   top:-390px;
   z-index: 2;

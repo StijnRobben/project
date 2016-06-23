@@ -5,12 +5,7 @@
 * 10559558
 *
 */
-// makes browser scroll down to charts (only works in Firefox)
-function bottom() {
-	document.getElementById( 'footer' ).scrollIntoView({block: "end", behavior: "smooth"});
-};
-
-function Scatter(dataset, title, ytitle, tiptext, random){
+function scatter(dataset, title, ytitle, tiptext, random){
 
 	// create titles above chart
 	document.getElementById("bigtitle").innerHTML = title;

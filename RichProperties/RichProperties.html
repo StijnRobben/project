@@ -51,14 +51,14 @@ Project
 		</ul>
 	</div>
 	<div id = "buttons">
-	    <button class = "option" onclick="Barchart('Tele.txt', 'Internet Users per 100 inhabitants', 'Users');Scatter('Tele.txt', 'Telecommunication', 'Internet Users per 100 inhabitants', 'Users'); ">Telecommunications</button>
-		<button class = "option" onclick = "Barchart('Mili.txt', 'Military Budget x 10&#710;9 ($)', 'Budget:');Scatter('Mili.txt', 'Military Budget', 'Military Budget x 10&#710;9 ($)', 'Budget'); ">Military Security</buton>
-		<button class = "option" onclick = "Barchart('Cor.txt', 'Corruption Points', 'Points:'); Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points');  ">Corruption</buton>
+	    <button class = "option" onclick = "barchart('Tele.txt', 'Internet Users per 100 inhabitants', 'Users');scatter('Tele.txt', 'Telecommunication', 'Internet Users per 100 inhabitants', 'Users'); ">Telecommunications</button>
+		<button class = "option" onclick = "barchart('Mili.txt', 'Military Budget x 10&#710;9 ($)', 'Budget:');scatter('Mili.txt', 'Military Budget', 'Military Budget x 10&#710;9 ($)', 'Budget'); ">Military Security</buton>
+		<button class = "option" onclick = "barchart('Cor.txt', 'Corruption Points', 'Points:'); scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points');  ">Corruption</buton>
 		  	<button onclick="myDropdown()" class="dropbtn">Random</button>
 		  	<div id="dropdown" class="dropdown-content">
-		    	<a onclick="Barchart('Tele.txt', 'Internet Users per 100 inhabitants', 'Users', 'random');Scatter('Tele.txt', 'Telecommunication', 'Internet Users per 100 inhabitants', 'Users', 'random'); ">Telecommunications</a>
-		    	<a onclick = "Barchart('Mili.txt', 'Military Budget x 10&#710;9 ($)', 'Budget:', 'random');Scatter('Mili.txt', 'Military Budget', 'Military Budget x 10&#710;9 ($)', 'Budget', 'random'); ">Military Security</a>
-		    	<a onclick = "Barchart('Cor.txt', 'Corruption Points', 'Points:', 'random');Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points', 'random'); ">Corruption</a>
+		    	<a onclick = "barchart('Tele.txt', 'Internet Users per 100 inhabitants', 'Users', 'random');scatter('Tele.txt', 'Telecommunication', 'Internet Users per 100 inhabitants', 'Users', 'random'); ">Telecommunications</a>
+		    	<a onclick = "barchart('Mili.txt', 'Military Budget x 10&#710;9 ($)', 'Budget:', 'random');scatter('Mili.txt', 'Military Budget', 'Military Budget x 10&#710;9 ($)', 'Budget', 'random'); ">Military Security</a>
+		    	<a onclick = "barchart('Cor.txt', 'Corruption Points', 'Points:', 'random');scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points', 'random'); ">Corruption</a>
 			</div>
 	</div>
 	<p id="bigtitle"></p>

@@ -1,12 +1,12 @@
- 	/**
-	* BarChart.js
-	*
-	* Stijn Robben
-	* 10559558
-	*
-	*/
+/**
+* BarChart.js
+*
+* Stijn Robben
+* 10559558
+*
+*/
 
-function Barchart(dataset, ytitle, tiptext, random){
+function barchart(dataset, ytitle, tiptext, random){
 	
 	// delete old barchart
 	d3.select(".barchart").remove();
