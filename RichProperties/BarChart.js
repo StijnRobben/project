@@ -44,7 +44,7 @@ function Barchart(dataset, ytitle, tiptext, random){
 		})
 
 	// define SVG
-	var svg = d3.select('body')
+	var svg = d3.select('#charts')
 		.append('svg')
 		.attr("class", "barchart")
 		.attr ({
@@ -138,7 +138,7 @@ function Barchart(dataset, ytitle, tiptext, random){
 			.append("text")
 				.attr("transform", "rotate(-90)")
 				.attr("y", 6)
-				.attr("dy", "-4.21em")
+				.attr("dy", "-4.30em")
 				.style("text-anchor", "end")
 				.text(ytitle);
 	});

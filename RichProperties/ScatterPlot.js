@@ -53,7 +53,7 @@ function Scatter(dataset, title, ytitle, tiptext){
 	.orient("left");
 
 	// make svg
-	var svg = d3.select("body").append("svg")
+	var svg = d3.select("#charts").append("svg")
 	.attr("class", "scat")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)

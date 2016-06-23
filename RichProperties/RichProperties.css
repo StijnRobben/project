@@ -32,8 +32,6 @@
 /*all text*/
 h4 {
 	position: relative;
-  bottom: -250px;
-  left: 0px;
   font-family: verdana;
 	font-size:10px;
 }
@@ -51,12 +49,12 @@ body {
 	background-color:antiquewhite;
 }
 
-.scat{
+/*.scat{
   position: relative;
   top:-310px;
   left:-570px;
   float:left;
-}
+}*/
 
 .circle{
   fill:#555555;
@@ -72,13 +70,18 @@ body {
   r: 8;
 }
 
+#charts{
+  position:relative;
+  top:-400px;
+}
+
 /*barchart*/
-.barchart{
+/*.barchart{
   position:relative;
   top: -310px;
   left:630px;
   float:left;
-}
+}*/
 
 .tooltip {
   box-sizing: border-box;
