@@ -17,5 +17,9 @@ Binnen de scatterplot zijn er een aantal specificaties die alleen in bepaalde ge
 De barchart wordt op dezelfde manier opgeroepen van voorheen beschreven. Hierbij wordt de index van het geklikte land bepaald en door middel van een for-loop worden de 5 landen met een lager GDP per capita en de 5 landen met een hoger GDP per capita in een array gezet, en worden met deze tijdelijke dataset de bars gemaakt. Het geklikte land verschijnt in het midden. Hierbij zijn de problemen met de assen, zoals beschreven bij de scatterplot, hetzelfde opgelost. Hiernaast is er nog een tooltip met data van specifieke landen toegevoegd. <br>
 ##### Knoppen: 
 Bij het klikken op de knoppen worden zoals eerder gezegd de functies aangeroepen met specieke argumenten. De random-knop is een dropdown menu waarbij een extra argument wordt mee gegeven. Met dit extra argument wordt d.m.v. een if-statement een functie actief die een aantal random integeres genereerd. Met deze integers worden gebruikt als indexen en alle data met de index van de random-gegenereerde integers worden in een dataset gestopt en hiermee wordt dan een nieuwe barchart gemaakt. <br>
-##### Problemen tijdens het proces
+### Problemen tijdens het proces
+Tijdens deze maand zijn er veel problemen ophoog gekomen die van te voren niet voorzien waren. 
+* hallo
+* hallo
+*hallo
 
