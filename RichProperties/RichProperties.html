@@ -21,7 +21,7 @@ Project
 		<br><h1 id = "title"> The school of life/lies</h1>
 		<h5 id = "motivation">
 			<b>Motivation</b><br>
-			This visualisation was made after seeing a rather sceptical video of "The School of Life". This is an educational organisation focused on informing people about various aspects of life. In the video they assign certain characteristics to prosperous countries. These characteristics seemed odd and further research revealed that "The School of Life" has no reliable source to substantiate these characteristics. I decided to take matters into my own hands and investige the correlation between the prosperity of a country and the different characteristics.<br>
+			This visualisation was made after seeing a rather sceptical video of "The School of Life". This is an educational organisation focused on informing people about various aspects of life. In the video they assign certain characteristics to prosperous countries. These characteristics seemed odd and further research revealed that "The School of Life" has no reliable source to substantiate these characteristics. I decided to take matters into my own hands and give users the opportunity to investige the correlation between the prosperity of a country and the different characteristics.<br>
 			The characteristics that the school of life assign to prosperous countries are: <u>Military Security</u>, <u>Corruption</u> & <u>Tele communications</u><br>
 			In the dictionary, "military security" is defined as "<i>the ability of a country to defend itself</i>". I decided to use the absolute budget (in US dollars) that a country invests in its military forces to investigate this praticular characteristic. Telecommunications are defined as followed: "<i>the exchange of information over significant distances by electronic means</i>" so for this characteristic I took the amount of internet users per 100 people. The values for corruptions require some more information. These values were obtained from Transparency International (TI), which publishes the Corruption Perceptions Index (CPI), ranking countries "<i>by their perceived levels of corruption, as determined by expert assessments and opinion surveys.</i>" The CPI generally defines corruption as "<i>the misuse of public power for private benefit.</i>"<br><br>
 			<b>Usage</b><br>
@@ -50,32 +50,26 @@ Project
 			<li style = "color: #7e7e7e"><span style = "color : black">No Data</span></li>				
 		</ul>
 	</div>
-
 	<div id = "buttons">
 	    <button class = "option" onclick="Barchart('Tele.txt', 'Internet Users per 100 inhabitants', 'Users');Scatter('Tele.txt', 'Telecommunication', 'Internet Users per 100 inhabitants', 'Users'); ">Telecommunications</button>
 		<button class = "option" onclick = "Barchart('Mili.txt', 'Military Budget x 10&#710;9 ($)', 'Budget:');Scatter('Mili.txt', 'Military Budget', 'Military Budget x 10&#710;9 ($)', 'Budget'); ">Military Security</buton>
 		<button class = "option" onclick = "Barchart('Cor.txt', 'Corruption Points', 'Points:'); Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points');  ">Corruption</buton>
-		  	<button onclick="myFunction()" class="dropbtn">Random</button>
-		  	<div id="myDropdown" class="dropdown-content">
-		    	<a onclick="Barchart('Tele.txt', 'Internet Users per 100 inhabitants', 'Users', 'random');Scatter('Tele.txt', 'Telecommunication', 'Internet Users per 100 inhabitants', 'Users'); ">Telecommunications</a>
-		    	<a onclick = "Barchart('Mili.txt', 'Military Budget x 10&#710;9 ($)', 'Budget:', 'random');Scatter('Mili.txt', 'Military Budget', 'Military Budget x 10&#710;9 ($)', 'Budget'); ">Military Security</a>
-		    	<a onclick = "Barchart('Cor.txt', 'Corruption Points', 'Points:', 'random');Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points'); ">Corruption</a>
+		  	<button onclick="myDropdown()" class="dropbtn">Random</button>
+		  	<div id="dropdown" class="dropdown-content">
+		    	<a onclick="Barchart('Tele.txt', 'Internet Users per 100 inhabitants', 'Users', 'random');Scatter('Tele.txt', 'Telecommunication', 'Internet Users per 100 inhabitants', 'Users', 'random'); ">Telecommunications</a>
+		    	<a onclick = "Barchart('Mili.txt', 'Military Budget x 10&#710;9 ($)', 'Budget:', 'random');Scatter('Mili.txt', 'Military Budget', 'Military Budget x 10&#710;9 ($)', 'Budget', 'random'); ">Military Security</a>
+		    	<a onclick = "Barchart('Cor.txt', 'Corruption Points', 'Points:', 'random');Scatter ('Cor.txt', 'Corruption', 'Corruption Points', 'Points', 'random'); ">Corruption</a>
 			</div>
 	</div>
 	<p id="bigtitle"></p>
-
+	<p id = "smalltitle"></p>
 	<div id = "charts"></div>
-
-<!-- 	<p id="nodata"></p> -->
-
-	<h4>data obtained from &copy;<a href = "http://data.worldbank.org">Worldbank</a> &  &copy;<a href = http://www.transparency.org/research/cpi/overview>Transparency International</a><h4>
-
-	
+	<p id="nodata"></p>
+	<div id = "footer">
+		<h4>data obtained from &copy;<a href = "http://data.worldbank.org">Worldbank</a> &  &copy;<a href = http://www.transparency.org/research/cpi/overview>Transparency International</a><h4>
+	</div>
 	<script src = "ScatterPlot.js"></script>
 	<script src = "Barchart.js"></script>
-
 	<script src = "RichProperties.js"></script>
-
-	<script src = "Barchart.js"></script>
 </body>
 </html>

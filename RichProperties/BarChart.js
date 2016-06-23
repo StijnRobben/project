@@ -18,41 +18,41 @@ function Barchart(dataset, ytitle, tiptext, random){
 
 	// define x-axis scale
 	var xScale = d3.scale.ordinal()
-		.rangeRoundBands([0, width], 0.2, 0.2)
+	.rangeRoundBands([0, width], 0.2, 0.2)
 
 	// define y-axis scale
 	var yScale = d3.scale.linear()
-		.range([height, 0]);
+	.range([height, 0]);
 
 	// define x-axis
 	var xAxis = d3.svg.axis()
-		.scale(xScale)
-		.orient("bottom");
+	.scale(xScale)
+	.orient("bottom");
 
 	// define y-axis
 	var yAxis = d3.svg.axis()
-		.scale(yScale)
-		.orient("left");
+	.scale(yScale)
+	.orient("left");
 
 	// define d3-tip
 	var tip = d3.tip()
-		.attr('class', 'd3-tip')
-		.offset([-10, 0])
-		.html(function(d) {
-			return "GDP: <span style='color:red'>" + "$" + d.GDP + 
-			"</span><br>" + tiptext + " <span style='color:red'> " + d.Variable.toFixed(2);
-		})
+	.attr('class', 'd3-tip')
+	.offset([-10, 0])
+	.html(function(d) {
+		return "GDP: <span style='color:red'>" + "$" + d.GDP + 
+		"</span><br>" + tiptext + " <span style='color:red'> " + d.Variable.toFixed(2);
+	})
 
 	// define SVG
 	var svg = d3.select('#charts')
-		.append('svg')
-		.attr("class", "barchart")
-		.attr ({
-			"width" : width + margin.right + margin.left,
-			"height" : height + margin.top + margin.bottom
-		})
-		.append('g')
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	.append('svg')
+	.attr("class", "barchart")
+	.attr ({
+		"width" : width + margin.right + margin.left,
+		"height" : height + margin.top + margin.bottom
+	})
+	.append('g')
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	svg.call(tip);
 
@@ -120,26 +120,26 @@ function Barchart(dataset, ytitle, tiptext, random){
 			.on('mouseover', tip.show)
 			.on('mouseout', tip.hide);
 
-	  // make x axis
+	  	// make x axis
 	    svg.append("g")
-			.attr("class", "x axis")
-			.attr("transform", "translate(0," + height + ")")
-			.call(xAxis)
-			.selectAll("text")  
-				.style("text-anchor", "end")
-				.attr("dx", "-.5em")
-				.attr("dy", ".15em")
-				.attr("transform", "rotate(-40)" );
+		.attr("class", "x axis")
+		.attr("transform", "translate(0," + height + ")")
+		.call(xAxis)
+		.selectAll("text")  
+			.style("text-anchor", "end")
+			.attr("dx", "-.5em")
+			.attr("dy", ".15em")
+			.attr("transform", "rotate(-40)" );
 
 	    // make y axis and label it
 		svg.append("g")
-			.attr("class", "y axis")
-			.call(yAxis)
-			.append("text")
-				.attr("transform", "rotate(-90)")
-				.attr("y", 6)
-				.attr("dy", "-4.30em")
-				.style("text-anchor", "end")
-				.text(ytitle);
+		.attr("class", "y axis")
+		.call(yAxis)
+		.append("text")
+			.attr("transform", "rotate(-90)")
+			.attr("y", 6)
+			.attr("dy", "-4.30em")
+			.style("text-anchor", "end")
+			.text(ytitle);
 	});
 }
